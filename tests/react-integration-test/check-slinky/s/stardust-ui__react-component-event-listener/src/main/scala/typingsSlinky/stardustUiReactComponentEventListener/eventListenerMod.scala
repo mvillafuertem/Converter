@@ -8,23 +8,43 @@ import scala.scalajs.js
 import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
-@JSImport("@stardust-ui/react-component-event-listener/dist/es/EventListener", JSImport.Namespace)
-@js.native
-object eventListenerMod extends js.Object {
+object eventListenerMod {
   
-  @js.native
-  object default extends js.Object {
+  object EventListener
+  
+  object default {
     
+    @JSImport("@stardust-ui/react-component-event-listener/dist/es/EventListener", JSImport.Default)
+    @js.native
+    val ^ : js.Any = js.native
+    
+    @JSImport("@stardust-ui/react-component-event-listener/dist/es/EventListener", JSImport.Default)
+    @js.native
     def apply[T /* <: EventTypes */](props: EventListenerOptions[T]): js.Any = js.native
     
-    var displayName: String = js.native
-    
-    var propTypes: Capture | Listener = js.native
-    
+    @JSImport("@stardust-ui/react-component-event-listener/dist/es/EventListener", "default.displayName")
     @js.native
-    object defaultProps extends js.Object {
+    val displayName: String = js.native
+    @scala.inline
+    def displayName_=(x: String): Unit = ^.asInstanceOf[js.Dynamic].updateDynamic("displayName")(x.asInstanceOf[js.Any])
+    
+    @JSImport("@stardust-ui/react-component-event-listener/dist/es/EventListener", "default.propTypes")
+    @js.native
+    val propTypes: Capture | Listener = js.native
+    @scala.inline
+    def propTypes_=(x: Capture | Listener): Unit = ^.asInstanceOf[js.Dynamic].updateDynamic("propTypes")(x.asInstanceOf[js.Any])
+    
+    object defaultProps {
       
-      var capture: Boolean = js.native
+      @JSImport("@stardust-ui/react-component-event-listener/dist/es/EventListener", "default.defaultProps")
+      @js.native
+      val ^ : js.Any = js.native
+      
+      @JSImport("@stardust-ui/react-component-event-listener/dist/es/EventListener", "default.defaultProps.capture")
+      @js.native
+      val capture: Boolean = js.native
+      @scala.inline
+      def capture_=(x: Boolean): Unit = ^.asInstanceOf[js.Dynamic].updateDynamic("capture")(x.asInstanceOf[js.Any])
     }
   }
 }
