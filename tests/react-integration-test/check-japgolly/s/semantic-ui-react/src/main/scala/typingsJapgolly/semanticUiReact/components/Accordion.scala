@@ -11,7 +11,6 @@ import typingsJapgolly.react.mod.ReactNodeArray
 import typingsJapgolly.react.mod.ReactType
 import typingsJapgolly.semanticUiReact.accordionAccordionAccordionMod.AccordionAccordionProps
 import typingsJapgolly.semanticUiReact.accordionAccordionMod.AccordionProps
-import typingsJapgolly.semanticUiReact.accordionAccordionMod.default
 import typingsJapgolly.semanticUiReact.accordionContentMod.AccordionContentProps
 import typingsJapgolly.semanticUiReact.accordionPanelMod.AccordionPanelProps
 import typingsJapgolly.semanticUiReact.accordionTitleMod.AccordionTitleProps
@@ -31,7 +30,7 @@ object Accordion {
   @scala.inline
   class Builder (val args: js.Array[js.Any])
     extends AnyVal
-       with StBuildingComponent[default] {
+       with StBuildingComponent[js.Object] {
     
     @scala.inline
     def activeIndexVarargs(value: Double*): this.type = set("activeIndex", js.Array(value :_*))

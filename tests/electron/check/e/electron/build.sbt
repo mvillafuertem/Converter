@@ -1,11 +1,11 @@
 organization := "org.scalablytyped"
 name := "electron"
-version := "2.0.0-a32af9"
+version := "2.0.0-bc12e8"
 scalaVersion := "2.13.3"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
   "com.olvind" %%% "scalablytyped-runtime" % "2.1.0",
-  "org.scalablytyped" %%% "node" % "0.0-unknown-d05ba7",
+  "org.scalablytyped" %%% "node" % "0.0-unknown-d75f40",
   "org.scalablytyped" %%% "std" % "0.0-unknown-94fc74")
 publishArtifact in packageDoc := false
 scalacOptions ++= List("-encoding", "utf-8", "-feature", "-g:notailcalls", "-language:implicitConversions", "-language:higherKinds", "-language:existentials")
