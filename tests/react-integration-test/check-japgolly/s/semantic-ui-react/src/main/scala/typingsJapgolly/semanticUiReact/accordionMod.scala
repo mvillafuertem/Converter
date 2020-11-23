@@ -4,7 +4,6 @@ import typingsJapgolly.react.mod.Component
 import typingsJapgolly.semanticUiReact.accordionAccordionMod.AccordionComponent
 import typingsJapgolly.semanticUiReact.accordionAccordionMod.AccordionProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object accordionMod {

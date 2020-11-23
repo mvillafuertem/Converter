@@ -8,7 +8,6 @@ import typingsJapgolly.semanticUiReact.genericMod.SemanticShorthandContent
 import typingsJapgolly.semanticUiReact.genericMod.SemanticTEXTALIGNMENTS
 import typingsJapgolly.semanticUiReact.testContainerTestContainerMod.TestContainerProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object TestContainer {

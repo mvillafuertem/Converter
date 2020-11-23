@@ -15,7 +15,6 @@ import typingsJapgolly.semanticUiReact.semanticUiReactStrings.left
 import typingsJapgolly.semanticUiReact.semanticUiReactStrings.right
 import typingsJapgolly.semanticUiReact.semanticUiReactStrings.top
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @scala.inline

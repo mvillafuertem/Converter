@@ -6,7 +6,6 @@ import typings.awsSdk.documentClientMod.DocumentClient.DocumentClientOptions
 import typings.awsSdk.dynamodbMod.AttributeValue
 import typings.awsSdk.dynamodbMod.ClientConfiguration
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -45,7 +44,7 @@ object mod {
       */
     class DocumentClient ()
       extends typings.awsSdk.allMod.DynamoDB.DocumentClient {
-      def this(options: DocumentClientOptions with ClientConfiguration) = this()
+      def this(options: DocumentClientOptions & ClientConfiguration) = this()
     }
     object DocumentClient
   }

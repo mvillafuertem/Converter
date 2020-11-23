@@ -1,13 +1,12 @@
 package typingsJapgolly.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait Attributes extends js.Object {
   
-  var key: js.UndefOr[Key] = js.native
+  var key: scala.Unit | Key = js.native
 }
 object Attributes {
   
@@ -24,7 +23,7 @@ object Attributes {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -36,6 +35,6 @@ object Attributes {
     def setKey(value: Key): Self = this.set("key", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteKey: Self = this.set("key", js.undefined)
+    def deleteKey: Self = this.set("key", ())
   }
 }

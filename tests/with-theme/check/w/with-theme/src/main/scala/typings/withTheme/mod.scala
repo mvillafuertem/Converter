@@ -6,19 +6,18 @@ import typings.react.mod.Ref
 import typings.react.mod.RefObject
 import typings.std.Pick
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
   
   @JSImport("with-theme", JSImport.Default)
   @js.native
-  def default(): js.Function1[/* component */ ComponentType[js.Any with WithTheme], ComponentClass[_]] = js.native
+  def default(): js.Function1[/* component */ ComponentType[js.Any & WithTheme], ComponentClass[?]] = js.native
   
   @js.native
   trait WithTheme extends js.Object {
     
-    var innerRef: js.UndefOr[Ref[_] | RefObject[_]] = js.native
+    var innerRef: scala.Unit | Ref[?] | RefObject[?] = js.native
     
     var theme: String = js.native
   }
@@ -37,7 +36,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -49,10 +48,10 @@ object mod {
       def setTheme(value: String): Self = this.set("theme", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def setInnerRef(value: Ref[_] | RefObject[_]): Self = this.set("innerRef", value.asInstanceOf[js.Any])
+      def setInnerRef(value: Ref[?] | RefObject[?]): Self = this.set("innerRef", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteInnerRef: Self = this.set("innerRef", js.undefined)
+      def deleteInnerRef: Self = this.set("innerRef", ())
     }
   }
   

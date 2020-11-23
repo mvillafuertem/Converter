@@ -1,16 +1,15 @@
 package typings.typeMappings
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 /* Inlined std.Partial<type-mappings.Person> */
 @js.native
 trait PartialPerson extends js.Object {
   
-  var age: js.UndefOr[scala.Double | Null] = js.native
+  var age: scala.Unit | scala.Double | Null = js.native
   
-  var name: js.UndefOr[String] = js.native
+  var name: scala.Unit | String = js.native
 }
 object PartialPerson {
   
@@ -27,7 +26,7 @@ object PartialPerson {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -39,7 +38,7 @@ object PartialPerson {
     def setAge(value: scala.Double): Self = this.set("age", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteAge: Self = this.set("age", js.undefined)
+    def deleteAge: Self = this.set("age", ())
     
     @scala.inline
     def setAgeNull: Self = this.set("age", null)
@@ -48,6 +47,6 @@ object PartialPerson {
     def setName(value: String): Self = this.set("name", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteName: Self = this.set("name", js.undefined)
+    def deleteName: Self = this.set("name", ())
   }
 }

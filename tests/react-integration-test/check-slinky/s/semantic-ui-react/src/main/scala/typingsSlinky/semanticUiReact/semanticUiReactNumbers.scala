@@ -3,7 +3,6 @@ package typingsSlinky.semanticUiReact
 import typingsSlinky.semanticUiReact.genericMod.SemanticWIDTHS
 import typingsSlinky.semanticUiReact.genericMod.SemanticWIDTHSNUMBER
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object semanticUiReactNumbers {

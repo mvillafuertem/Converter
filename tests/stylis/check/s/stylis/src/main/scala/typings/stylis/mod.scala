@@ -3,7 +3,6 @@ package typings.stylis
 import org.scalablytyped.runtime.Instantiable0
 import org.scalablytyped.runtime.Instantiable1
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -45,21 +44,19 @@ object mod {
   @js.native
   trait Options extends js.Object {
     
-    var cascade: js.UndefOr[Boolean] = js.native
+    var cascade: scala.Unit | Boolean = js.native
     
-    var compress: js.UndefOr[Boolean] = js.native
+    var compress: scala.Unit | Boolean = js.native
     
-    var global: js.UndefOr[Boolean] = js.native
+    var global: scala.Unit | Boolean = js.native
     
-    var keyframe: js.UndefOr[Boolean] = js.native
+    var keyframe: scala.Unit | Boolean = js.native
     
-    var prefix: js.UndefOr[
-        Boolean | (js.Function3[/* key */ String, /* value */ String, /* context */ Double, Boolean])
-      ] = js.native
+    var prefix: scala.Unit | Boolean | (js.Function3[/* key */ String, /* value */ String, /* context */ Double, Boolean]) = js.native
     
-    var preserve: js.UndefOr[Boolean] = js.native
+    var preserve: scala.Unit | Boolean = js.native
     
-    var semicolon: js.UndefOr[Boolean] = js.native
+    var semicolon: scala.Unit | Boolean = js.native
   }
   object Options {
     
@@ -76,7 +73,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -88,25 +85,25 @@ object mod {
       def setCascade(value: Boolean): Self = this.set("cascade", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteCascade: Self = this.set("cascade", js.undefined)
+      def deleteCascade: Self = this.set("cascade", ())
       
       @scala.inline
       def setCompress(value: Boolean): Self = this.set("compress", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteCompress: Self = this.set("compress", js.undefined)
+      def deleteCompress: Self = this.set("compress", ())
       
       @scala.inline
       def setGlobal(value: Boolean): Self = this.set("global", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteGlobal: Self = this.set("global", js.undefined)
+      def deleteGlobal: Self = this.set("global", ())
       
       @scala.inline
       def setKeyframe(value: Boolean): Self = this.set("keyframe", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteKeyframe: Self = this.set("keyframe", js.undefined)
+      def deleteKeyframe: Self = this.set("keyframe", ())
       
       @scala.inline
       def setPrefixFunction3(value: (/* key */ String, /* value */ String, /* context */ Double) => Boolean): Self = this.set("prefix", js.Any.fromFunction3(value))
@@ -117,19 +114,19 @@ object mod {
       ): Self = this.set("prefix", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePrefix: Self = this.set("prefix", js.undefined)
+      def deletePrefix: Self = this.set("prefix", ())
       
       @scala.inline
       def setPreserve(value: Boolean): Self = this.set("preserve", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePreserve: Self = this.set("preserve", js.undefined)
+      def deletePreserve: Self = this.set("preserve", ())
       
       @scala.inline
       def setSemicolon(value: Boolean): Self = this.set("semicolon", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteSemicolon: Self = this.set("semicolon", js.undefined)
+      def deleteSemicolon: Self = this.set("semicolon", ())
     }
   }
   

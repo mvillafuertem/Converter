@@ -6,7 +6,6 @@ import japgolly.scalajs.react.vdom.VdomNode
 import typingsJapgolly.react.mod.ComponentType
 import typingsJapgolly.std.Exclude
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -33,7 +32,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -49,7 +48,7 @@ object anon {
   @js.native
   trait `1` extends js.Object {
     
-    var ref: js.UndefOr[Exclude[_, String]] = js.native
+    var ref: scala.Unit | (Exclude[js.Any, String]) = js.native
   }
   object `1` {
     
@@ -66,7 +65,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -75,17 +74,17 @@ object anon {
       }
       
       @scala.inline
-      def setRef(value: Exclude[_, String]): Self = this.set("ref", value.asInstanceOf[js.Any])
+      def setRef(value: Exclude[js.Any, String]): Self = this.set("ref", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteRef: Self = this.set("ref", js.undefined)
+      def deleteRef: Self = this.set("ref", ())
     }
   }
   
   @js.native
   trait Children extends js.Object {
     
-    var children: js.UndefOr[Node] = js.native
+    var children: scala.Unit | Node = js.native
   }
   object Children {
     
@@ -102,7 +101,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -117,7 +116,7 @@ object anon {
       def setChildren(value: VdomNode): Self = this.set("children", value.rawNode.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteChildren: Self = this.set("children", js.undefined)
+      def deleteChildren: Self = this.set("children", ())
     }
   }
   
@@ -146,7 +145,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -182,7 +181,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -215,7 +214,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -231,9 +230,7 @@ object anon {
   @js.native
   trait Ref extends js.Object {
     
-    var ref: js.UndefOr[
-        /* import warning: importer.ImportType#apply Failed type conversion: infer R */ js.Any
-      ] = js.native
+    var ref: scala.Unit | (/* import warning: importer.ImportType#apply Failed type conversion: infer R */ js.Any) = js.native
   }
   object Ref {
     
@@ -250,7 +247,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -262,31 +259,31 @@ object anon {
       def setRef(value: /* import warning: importer.ImportType#apply Failed type conversion: infer R */ js.Any): Self = this.set("ref", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteRef: Self = this.set("ref", js.undefined)
+      def deleteRef: Self = this.set("ref", ())
     }
   }
   
   @js.native
-  trait Result[T /* <: ComponentType[_] */] extends js.Object {
+  trait Result[T /* <: ComponentType[js.Any] */] extends js.Object {
     
     val _result: T = js.native
   }
   object Result {
     
     @scala.inline
-    def apply[T /* <: ComponentType[_] */](_result: T): Result[T] = {
+    def apply[T /* <: ComponentType[js.Any] */](_result: T): Result[T] = {
       val __obj = js.Dynamic.literal(_result = _result.asInstanceOf[js.Any])
       __obj.asInstanceOf[Result[T]]
     }
     
     @scala.inline
-    implicit class ResultOps[Self <: Result[_], T /* <: ComponentType[_] */] (val x: Self with Result[T]) extends AnyVal {
+    implicit class ResultOps[Self <: Result[?], T /* <: ComponentType[js.Any] */] (val x: Self & Result[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -300,27 +297,27 @@ object anon {
   }
   
   @js.native
-  trait Type[T /* <: ComponentType[_] */] extends js.Object {
+  trait Type[T /* <: ComponentType[js.Any] */] extends js.Object {
     
     val `type`: T = js.native
   }
   object Type {
     
     @scala.inline
-    def apply[T /* <: ComponentType[_] */](`type`: T): Type[T] = {
+    def apply[T /* <: ComponentType[js.Any] */](`type`: T): Type[T] = {
       val __obj = js.Dynamic.literal()
       __obj.updateDynamic("type")(`type`.asInstanceOf[js.Any])
       __obj.asInstanceOf[Type[T]]
     }
     
     @scala.inline
-    implicit class TypeOps[Self <: Type[_], T /* <: ComponentType[_] */] (val x: Self with Type[T]) extends AnyVal {
+    implicit class TypeOps[Self <: Type[?], T /* <: ComponentType[js.Any] */] (val x: Self & Type[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {

@@ -6,7 +6,6 @@ import org.scalablytyped.runtime.StringDictionary
 import typings.node.NodeJS.EventEmitter
 import typings.std.RegExp
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -30,9 +29,9 @@ object mod {
   @js.native
   trait CommandOptions extends js.Object {
     
-    var isDefault: js.UndefOr[Boolean] = js.native
+    var isDefault: scala.Unit | Boolean = js.native
     
-    var noHelp: js.UndefOr[Boolean] = js.native
+    var noHelp: scala.Unit | Boolean = js.native
   }
   object CommandOptions {
     
@@ -49,7 +48,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -61,13 +60,13 @@ object mod {
       def setIsDefault(value: Boolean): Self = this.set("isDefault", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteIsDefault: Self = this.set("isDefault", js.undefined)
+      def deleteIsDefault: Self = this.set("isDefault", ())
       
       @scala.inline
       def setNoHelp(value: Boolean): Self = this.set("noHelp", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteNoHelp: Self = this.set("noHelp", js.undefined)
+      def deleteNoHelp: Self = this.set("noHelp", ())
     }
   }
   
@@ -75,13 +74,13 @@ object mod {
   trait CommanderStatic
     extends typings.commander.mod.local.Command {
     
-    var Command: Instantiable1[/* name */ js.UndefOr[String], typings.commander.mod.local.Command] = js.native
+    var Command: Instantiable1[/* name */ scala.Unit | String, typings.commander.mod.local.Command] = js.native
     
     var CommandOptions: typings.commander.mod.CommandOptions = js.native
     
     var Option: Instantiable2[
         /* flags */ String, 
-        /* description */ js.UndefOr[String], 
+        /* description */ scala.Unit | String, 
         typings.commander.mod.local.Option
       ] = js.native
     
@@ -124,7 +123,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -257,9 +256,9 @@ object mod {
         * @returns {Command} the new command
         */
       def command(name: String): typings.commander.mod.local.Command = js.native
-      def command(name: String, desc: js.UndefOr[scala.Nothing], opts: CommandOptions): typings.commander.mod.local.Command = js.native
       def command(name: String, desc: String): typings.commander.mod.local.Command = js.native
       def command(name: String, desc: String, opts: CommandOptions): typings.commander.mod.local.Command = js.native
+      def command(name: String, desc: Unit, opts: CommandOptions): typings.commander.mod.local.Command = js.native
       
       def description(): String = js.native
       /**
@@ -338,29 +337,8 @@ object mod {
         * @returns {Command} for chaining
         */
       def option(flags: String): typings.commander.mod.local.Command = js.native
-      def option(flags: String, description: js.UndefOr[scala.Nothing], defaultValue: js.Any): typings.commander.mod.local.Command = js.native
-      def option(
-        flags: String,
-        description: js.UndefOr[scala.Nothing],
-        fn: js.UndefOr[scala.Nothing],
-        defaultValue: js.Any
-      ): typings.commander.mod.local.Command = js.native
-      def option(
-        flags: String,
-        description: js.UndefOr[scala.Nothing],
-        fn: js.Function2[/* arg1 */ js.Any, /* arg2 */ js.Any, Unit]
-      ): typings.commander.mod.local.Command = js.native
-      def option(
-        flags: String,
-        description: js.UndefOr[scala.Nothing],
-        fn: js.Function2[/* arg1 */ js.Any, /* arg2 */ js.Any, Unit],
-        defaultValue: js.Any
-      ): typings.commander.mod.local.Command = js.native
-      def option(flags: String, description: js.UndefOr[scala.Nothing], fn: RegExp): typings.commander.mod.local.Command = js.native
-      def option(flags: String, description: js.UndefOr[scala.Nothing], fn: RegExp, defaultValue: js.Any): typings.commander.mod.local.Command = js.native
       def option(flags: String, description: String): typings.commander.mod.local.Command = js.native
       def option(flags: String, description: String, defaultValue: js.Any): typings.commander.mod.local.Command = js.native
-      def option(flags: String, description: String, fn: js.UndefOr[scala.Nothing], defaultValue: js.Any): typings.commander.mod.local.Command = js.native
       def option(flags: String, description: String, fn: js.Function2[/* arg1 */ js.Any, /* arg2 */ js.Any, Unit]): typings.commander.mod.local.Command = js.native
       def option(
         flags: String,
@@ -368,8 +346,20 @@ object mod {
         fn: js.Function2[/* arg1 */ js.Any, /* arg2 */ js.Any, Unit],
         defaultValue: js.Any
       ): typings.commander.mod.local.Command = js.native
+      def option(flags: String, description: String, fn: Unit, defaultValue: js.Any): typings.commander.mod.local.Command = js.native
       def option(flags: String, description: String, fn: RegExp): typings.commander.mod.local.Command = js.native
       def option(flags: String, description: String, fn: RegExp, defaultValue: js.Any): typings.commander.mod.local.Command = js.native
+      def option(flags: String, description: Unit, defaultValue: js.Any): typings.commander.mod.local.Command = js.native
+      def option(flags: String, description: Unit, fn: js.Function2[/* arg1 */ js.Any, /* arg2 */ js.Any, Unit]): typings.commander.mod.local.Command = js.native
+      def option(
+        flags: String,
+        description: Unit,
+        fn: js.Function2[/* arg1 */ js.Any, /* arg2 */ js.Any, Unit],
+        defaultValue: js.Any
+      ): typings.commander.mod.local.Command = js.native
+      def option(flags: String, description: Unit, fn: Unit, defaultValue: js.Any): typings.commander.mod.local.Command = js.native
+      def option(flags: String, description: Unit, fn: RegExp): typings.commander.mod.local.Command = js.native
+      def option(flags: String, description: Unit, fn: RegExp, defaultValue: js.Any): typings.commander.mod.local.Command = js.native
       
       /**
         * Return an object containing options as key-value pairs
@@ -450,7 +440,7 @@ object mod {
       
       var required: Boolean = js.native
       
-      var short: js.UndefOr[String] = js.native
+      var short: scala.Unit | String = js.native
     }
     object Option {
       
@@ -474,7 +464,7 @@ object mod {
         def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
         
         @scala.inline
-        def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+        def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
         
         @scala.inline
         def set(key: String, value: js.Any): Self = {
@@ -504,7 +494,7 @@ object mod {
         def setShort(value: String): Self = this.set("short", value.asInstanceOf[js.Any])
         
         @scala.inline
-        def deleteShort: Self = this.set("short", js.undefined)
+        def deleteShort: Self = this.set("short", ())
       }
     }
   }

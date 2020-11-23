@@ -7,7 +7,6 @@ import org.scalajs.dom.raw.Element
 import org.scalajs.dom.raw.Event
 import org.scalajs.dom.raw.EventTarget
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
@@ -33,7 +32,7 @@ object WheelEvent {
     clientX: Double,
     clientY: Double,
     ctrlKey: Boolean,
-    currentTarget: EventTarget with T,
+    currentTarget: EventTarget & T,
     defaultPrevented: Boolean,
     deltaMode: Double,
     deltaX: Double,
@@ -67,13 +66,13 @@ object WheelEvent {
   }
   
   @scala.inline
-  implicit class WheelEventOps[Self <: ReactWheelEventFrom[Element], T] (val x: Self with (ReactWheelEventFrom[T with Element])) extends AnyVal {
+  implicit class WheelEventOps[Self <: ReactWheelEventFrom[Element], T] (val x: Self & (ReactWheelEventFrom[T & Element])) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {

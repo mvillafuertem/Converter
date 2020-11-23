@@ -2,7 +2,6 @@ package typings.node
 
 import typings.node.nodeStrings.foo
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object NodeJS {
@@ -10,13 +9,13 @@ object NodeJS {
   @js.native
   trait ErrnoException extends Error {
     
-    var code: js.UndefOr[String] = js.native
+    var code: scala.Unit | String = js.native
     
-    var errno: js.UndefOr[Double] = js.native
+    var errno: scala.Unit | Double = js.native
     
-    var path: js.UndefOr[String] = js.native
+    var path: scala.Unit | String = js.native
     
-    var syscall: js.UndefOr[String] = js.native
+    var syscall: scala.Unit | String = js.native
   }
   object ErrnoException {
     
@@ -33,7 +32,7 @@ object NodeJS {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -45,25 +44,25 @@ object NodeJS {
       def setCode(value: String): Self = this.set("code", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteCode: Self = this.set("code", js.undefined)
+      def deleteCode: Self = this.set("code", ())
       
       @scala.inline
       def setErrno(value: Double): Self = this.set("errno", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteErrno: Self = this.set("errno", js.undefined)
+      def deleteErrno: Self = this.set("errno", ())
       
       @scala.inline
       def setPath(value: String): Self = this.set("path", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePath: Self = this.set("path", js.undefined)
+      def deletePath: Self = this.set("path", ())
       
       @scala.inline
       def setSyscall(value: String): Self = this.set("syscall", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteSyscall: Self = this.set("syscall", js.undefined)
+      def deleteSyscall: Self = this.set("syscall", ())
     }
   }
   

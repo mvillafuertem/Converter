@@ -1,21 +1,20 @@
 package typingsSlinky.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait VideoHTMLAttributes[T] extends MediaHTMLAttributes[T] {
   
-  var disablePictureInPicture: js.UndefOr[Boolean] = js.native
+  var disablePictureInPicture: scala.Unit | Boolean = js.native
   
-  var height: js.UndefOr[Double | String] = js.native
+  var height: scala.Unit | Double | String = js.native
   
-  var playsInline: js.UndefOr[Boolean] = js.native
+  var playsInline: scala.Unit | Boolean = js.native
   
-  var poster: js.UndefOr[String] = js.native
+  var poster: scala.Unit | String = js.native
   
-  var width: js.UndefOr[Double | String] = js.native
+  var width: scala.Unit | Double | String = js.native
 }
 object VideoHTMLAttributes {
   
@@ -26,13 +25,13 @@ object VideoHTMLAttributes {
   }
   
   @scala.inline
-  implicit class VideoHTMLAttributesOps[Self <: VideoHTMLAttributes[_], T] (val x: Self with VideoHTMLAttributes[T]) extends AnyVal {
+  implicit class VideoHTMLAttributesOps[Self <: VideoHTMLAttributes[?], T] (val x: Self & VideoHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -44,30 +43,30 @@ object VideoHTMLAttributes {
     def setDisablePictureInPicture(value: Boolean): Self = this.set("disablePictureInPicture", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteDisablePictureInPicture: Self = this.set("disablePictureInPicture", js.undefined)
+    def deleteDisablePictureInPicture: Self = this.set("disablePictureInPicture", ())
     
     @scala.inline
     def setHeight(value: Double | String): Self = this.set("height", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteHeight: Self = this.set("height", js.undefined)
+    def deleteHeight: Self = this.set("height", ())
     
     @scala.inline
     def setPlaysInline(value: Boolean): Self = this.set("playsInline", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deletePlaysInline: Self = this.set("playsInline", js.undefined)
+    def deletePlaysInline: Self = this.set("playsInline", ())
     
     @scala.inline
     def setPoster(value: String): Self = this.set("poster", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deletePoster: Self = this.set("poster", js.undefined)
+    def deletePoster: Self = this.set("poster", ())
     
     @scala.inline
     def setWidth(value: Double | String): Self = this.set("width", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteWidth: Self = this.set("width", js.undefined)
+    def deleteWidth: Self = this.set("width", ())
   }
 }

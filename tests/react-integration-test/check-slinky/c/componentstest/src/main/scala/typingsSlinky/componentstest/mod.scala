@@ -7,7 +7,6 @@ import typingsSlinky.react.mod.CSSProperties
 import typingsSlinky.react.mod.FunctionComponent
 import typingsSlinky.react.mod.MouseEventHandler
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -46,7 +45,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -65,7 +64,7 @@ object mod {
   @js.native
   trait B extends Props {
     
-    var bCallback: js.UndefOr[js.Function0[String]] = js.native
+    var bCallback: scala.Unit | js.Function0[String] = js.native
     
     var bMember: String = js.native
   }
@@ -84,7 +83,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -99,20 +98,20 @@ object mod {
       def setBCallback(value: () => String): Self = this.set("bCallback", js.Any.fromFunction0(value))
       
       @scala.inline
-      def deleteBCallback: Self = this.set("bCallback", js.undefined)
+      def deleteBCallback: Self = this.set("bCallback", ())
     }
   }
   
   @js.native
   trait CardGridProps extends js.Object {
     
-    var className: js.UndefOr[String] = js.native
+    var className: scala.Unit | String = js.native
     
-    var hoverable: js.UndefOr[Boolean] = js.native
+    var hoverable: scala.Unit | Boolean = js.native
     
-    var prefixCls: js.UndefOr[String] = js.native
+    var prefixCls: scala.Unit | String = js.native
     
-    var style: js.UndefOr[CSSProperties] = js.native
+    var style: scala.Unit | CSSProperties = js.native
   }
   object CardGridProps {
     
@@ -129,7 +128,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -141,25 +140,25 @@ object mod {
       def setClassName(value: String): Self = this.set("className", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteClassName: Self = this.set("className", js.undefined)
+      def deleteClassName: Self = this.set("className", ())
       
       @scala.inline
       def setHoverable(value: Boolean): Self = this.set("hoverable", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteHoverable: Self = this.set("hoverable", js.undefined)
+      def deleteHoverable: Self = this.set("hoverable", ())
       
       @scala.inline
       def setPrefixCls(value: String): Self = this.set("prefixCls", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePrefixCls: Self = this.set("prefixCls", js.undefined)
+      def deletePrefixCls: Self = this.set("prefixCls", ())
       
       @scala.inline
       def setStyle(value: CSSProperties): Self = this.set("style", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteStyle: Self = this.set("style", js.undefined)
+      def deleteStyle: Self = this.set("style", ())
     }
   }
   
@@ -173,9 +172,9 @@ object mod {
   @js.native
   trait CardProps extends js.Object {
     
-    var onClick: js.UndefOr[MouseEventHandler[HTMLDivElement]] = js.native
+    var onClick: scala.Unit | MouseEventHandler[HTMLDivElement] = js.native
     
-    var prefixCls: js.UndefOr[String] = js.native
+    var prefixCls: scala.Unit | String = js.native
   }
   object CardProps {
     
@@ -192,7 +191,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -204,13 +203,13 @@ object mod {
       def setOnClick(value: SyntheticMouseEvent[HTMLDivElement] => Unit): Self = this.set("onClick", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteOnClick: Self = this.set("onClick", js.undefined)
+      def deleteOnClick: Self = this.set("onClick", ())
       
       @scala.inline
       def setPrefixCls(value: String): Self = this.set("prefixCls", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePrefixCls: Self = this.set("prefixCls", js.undefined)
+      def deletePrefixCls: Self = this.set("prefixCls", ())
     }
   }
   

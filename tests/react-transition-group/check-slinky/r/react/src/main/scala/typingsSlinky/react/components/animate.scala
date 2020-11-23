@@ -5,14 +5,13 @@ import slinky.web.html.`*`.tag
 import typingsSlinky.StBuildingComponent.Default
 import typingsSlinky.react.mod.ClassAttributes
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object animate {
   
   val component: String = "animate"
   
-  def withProps(p: ClassAttributes[SVGElement]): Default[tag.type, SVGElement with js.Object] = new Default[tag.type, SVGElement with js.Object](js.Array(this.component, p.asInstanceOf[js.Any]))
+  def withProps(p: ClassAttributes[SVGElement]): Default[tag.type, SVGElement & js.Object] = new Default[tag.type, SVGElement & js.Object](js.Array(this.component, p.asInstanceOf[js.Any]))
   
-  implicit def make(companion: animate.type): Default[tag.type, SVGElement with js.Object] = new Default[tag.type, SVGElement with js.Object](js.Array(this.component, js.Dictionary.empty))()
+  implicit def make(companion: animate.type): Default[tag.type, SVGElement & js.Object] = new Default[tag.type, SVGElement & js.Object](js.Array(this.component, js.Dictionary.empty))()
 }

@@ -1,13 +1,12 @@
 package typingsJapgolly.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait LiHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var value: js.UndefOr[String | js.Array[String] | Double] = js.native
+  var value: scala.Unit | String | js.Array[String] | Double = js.native
 }
 object LiHTMLAttributes {
   
@@ -18,13 +17,13 @@ object LiHTMLAttributes {
   }
   
   @scala.inline
-  implicit class LiHTMLAttributesOps[Self <: LiHTMLAttributes[_], T] (val x: Self with LiHTMLAttributes[T]) extends AnyVal {
+  implicit class LiHTMLAttributesOps[Self <: LiHTMLAttributes[?], T] (val x: Self & LiHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -39,6 +38,6 @@ object LiHTMLAttributes {
     def setValue(value: String | js.Array[String] | Double): Self = this.set("value", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteValue: Self = this.set("value", js.undefined)
+    def deleteValue: Self = this.set("value", ())
   }
 }

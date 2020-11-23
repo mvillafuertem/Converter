@@ -3,7 +3,6 @@ package typingsJapgolly.react
 import japgolly.scalajs.react.raw.React.Node
 import japgolly.scalajs.react.vdom.VdomNode
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -11,7 +10,7 @@ object anon {
   @js.native
   trait Children extends js.Object {
     
-    var children: js.UndefOr[Node] = js.native
+    var children: scala.Unit | Node = js.native
   }
   object Children {
     

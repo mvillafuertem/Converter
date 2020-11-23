@@ -1,13 +1,12 @@
 package typings.node
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait Error extends js.Object {
   
-  var stack: js.UndefOr[String] = js.native
+  var stack: scala.Unit | String = js.native
 }
 object Error {
   
@@ -24,7 +23,7 @@ object Error {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -36,6 +35,6 @@ object Error {
     def setStack(value: String): Self = this.set("stack", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteStack: Self = this.set("stack", js.undefined)
+    def deleteStack: Self = this.set("stack", ())
   }
 }

@@ -1,7 +1,6 @@
 package typingsSlinky.stardustUiReactComponentRef
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -31,7 +30,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -54,8 +53,38 @@ object anon {
   @js.native
   trait InnerRef extends js.Object {
     
-    var children: js.UndefOr[scala.Nothing] = js.native
+    var children: Unit = js.native
     
-    var innerRef: js.UndefOr[scala.Nothing] = js.native
+    var innerRef: Unit = js.native
+  }
+  object InnerRef {
+    
+    @scala.inline
+    def apply(children: Unit, innerRef: Unit): InnerRef = {
+      val __obj = js.Dynamic.literal(children = children.asInstanceOf[js.Any], innerRef = innerRef.asInstanceOf[js.Any])
+      __obj.asInstanceOf[InnerRef]
+    }
+    
+    @scala.inline
+    implicit class InnerRefOps[Self <: InnerRef] (val x: Self) extends AnyVal {
+      
+      @scala.inline
+      def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
+      
+      @scala.inline
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
+      
+      @scala.inline
+      def set(key: String, value: js.Any): Self = {
+        x.asInstanceOf[js.Dynamic].updateDynamic(key)(value)
+        x
+      }
+      
+      @scala.inline
+      def setChildren(value: Unit): Self = this.set("children", value.asInstanceOf[js.Any])
+      
+      @scala.inline
+      def setInnerRef(value: Unit): Self = this.set("innerRef", value.asInstanceOf[js.Any])
+    }
   }
 }

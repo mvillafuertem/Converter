@@ -1,7 +1,6 @@
 package typingsSlinky.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 // TODO: similar to how Fragment is actually a symbol, the values returned from createContext,

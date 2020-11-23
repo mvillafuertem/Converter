@@ -3,7 +3,6 @@ package typingsSlinky.materialUi.components
 import slinky.web.html.`*`.tag
 import typingsSlinky.StBuildingComponent
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @scala.inline

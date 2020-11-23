@@ -7,7 +7,6 @@ import typingsJapgolly.stardustUiReactComponentRef.anon.InnerRef
 import typingsJapgolly.stardustUiReactComponentRef.refFindNodeMod.default
 import typingsJapgolly.stardustUiReactComponentRef.typesMod.RefProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {

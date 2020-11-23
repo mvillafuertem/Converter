@@ -1,7 +1,6 @@
 package typingsSlinky.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
@@ -9,7 +8,7 @@ trait ConsumerProps[T] extends js.Object {
   
   def children(value: T): slinky.core.facade.ReactElement = js.native
   
-  var unstable_observedBits: js.UndefOr[Double] = js.native
+  var unstable_observedBits: scala.Unit | Double = js.native
 }
 object ConsumerProps {
   
@@ -20,13 +19,13 @@ object ConsumerProps {
   }
   
   @scala.inline
-  implicit class ConsumerPropsOps[Self <: ConsumerProps[_], T] (val x: Self with ConsumerProps[T]) extends AnyVal {
+  implicit class ConsumerPropsOps[Self <: ConsumerProps[?], T] (val x: Self & ConsumerProps[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -41,6 +40,6 @@ object ConsumerProps {
     def setUnstable_observedBits(value: Double): Self = this.set("unstable_observedBits", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteUnstable_observedBits: Self = this.set("unstable_observedBits", js.undefined)
+    def deleteUnstable_observedBits: Self = this.set("unstable_observedBits", ())
   }
 }

@@ -1,7 +1,6 @@
 package typings.phaser
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 // Type definitions for Phaser 2.6.2 - 26th August 2016

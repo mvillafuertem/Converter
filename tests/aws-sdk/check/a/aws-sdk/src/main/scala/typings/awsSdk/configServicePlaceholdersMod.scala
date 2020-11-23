@@ -3,7 +3,6 @@ package typings.awsSdk
 import typings.awsSdk.dynamodbMod.ClientConfiguration
 import typings.awsSdk.dynamodbMod.apiVersion
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object configServicePlaceholdersMod {
@@ -11,7 +10,7 @@ object configServicePlaceholdersMod {
   @js.native
   trait ConfigurationServiceApiVersions extends js.Object {
     
-    var dynamodb: js.UndefOr[apiVersion] = js.native
+    var dynamodb: scala.Unit | apiVersion = js.native
   }
   object ConfigurationServiceApiVersions {
     
@@ -28,7 +27,7 @@ object configServicePlaceholdersMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -40,7 +39,7 @@ object configServicePlaceholdersMod {
       def setDynamodb(value: apiVersion): Self = this.set("dynamodb", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDynamodb: Self = this.set("dynamodb", js.undefined)
+      def deleteDynamodb: Self = this.set("dynamodb", ())
     }
   }
   
@@ -48,6 +47,6 @@ object configServicePlaceholdersMod {
   @js.native
   abstract class ConfigurationServicePlaceholders () extends js.Object {
     
-    var dynamodb: js.UndefOr[ClientConfiguration] = js.native
+    var dynamodb: scala.Unit | ClientConfiguration = js.native
   }
 }

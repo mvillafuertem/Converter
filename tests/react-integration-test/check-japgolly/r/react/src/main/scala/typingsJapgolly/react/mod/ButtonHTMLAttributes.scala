@@ -4,33 +4,32 @@ import typingsJapgolly.react.reactStrings.button
 import typingsJapgolly.react.reactStrings.reset
 import typingsJapgolly.react.reactStrings.submit
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait ButtonHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var autoFocus: js.UndefOr[Boolean] = js.native
+  var autoFocus: scala.Unit | Boolean = js.native
   
-  var disabled: js.UndefOr[Boolean] = js.native
+  var disabled: scala.Unit | Boolean = js.native
   
-  var form: js.UndefOr[String] = js.native
+  var form: scala.Unit | String = js.native
   
-  var formAction: js.UndefOr[String] = js.native
+  var formAction: scala.Unit | String = js.native
   
-  var formEncType: js.UndefOr[String] = js.native
+  var formEncType: scala.Unit | String = js.native
   
-  var formMethod: js.UndefOr[String] = js.native
+  var formMethod: scala.Unit | String = js.native
   
-  var formNoValidate: js.UndefOr[Boolean] = js.native
+  var formNoValidate: scala.Unit | Boolean = js.native
   
-  var formTarget: js.UndefOr[String] = js.native
+  var formTarget: scala.Unit | String = js.native
   
-  var name: js.UndefOr[String] = js.native
+  var name: scala.Unit | String = js.native
   
-  var `type`: js.UndefOr[submit | reset | button] = js.native
+  var `type`: scala.Unit | submit | reset | button = js.native
   
-  var value: js.UndefOr[String | js.Array[String] | Double] = js.native
+  var value: scala.Unit | String | js.Array[String] | Double = js.native
 }
 object ButtonHTMLAttributes {
   
@@ -41,13 +40,13 @@ object ButtonHTMLAttributes {
   }
   
   @scala.inline
-  implicit class ButtonHTMLAttributesOps[Self <: ButtonHTMLAttributes[_], T] (val x: Self with ButtonHTMLAttributes[T]) extends AnyVal {
+  implicit class ButtonHTMLAttributesOps[Self <: ButtonHTMLAttributes[?], T] (val x: Self & ButtonHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -59,61 +58,61 @@ object ButtonHTMLAttributes {
     def setAutoFocus(value: Boolean): Self = this.set("autoFocus", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteAutoFocus: Self = this.set("autoFocus", js.undefined)
+    def deleteAutoFocus: Self = this.set("autoFocus", ())
     
     @scala.inline
     def setDisabled(value: Boolean): Self = this.set("disabled", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteDisabled: Self = this.set("disabled", js.undefined)
+    def deleteDisabled: Self = this.set("disabled", ())
     
     @scala.inline
     def setForm(value: String): Self = this.set("form", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteForm: Self = this.set("form", js.undefined)
+    def deleteForm: Self = this.set("form", ())
     
     @scala.inline
     def setFormAction(value: String): Self = this.set("formAction", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteFormAction: Self = this.set("formAction", js.undefined)
+    def deleteFormAction: Self = this.set("formAction", ())
     
     @scala.inline
     def setFormEncType(value: String): Self = this.set("formEncType", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteFormEncType: Self = this.set("formEncType", js.undefined)
+    def deleteFormEncType: Self = this.set("formEncType", ())
     
     @scala.inline
     def setFormMethod(value: String): Self = this.set("formMethod", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteFormMethod: Self = this.set("formMethod", js.undefined)
+    def deleteFormMethod: Self = this.set("formMethod", ())
     
     @scala.inline
     def setFormNoValidate(value: Boolean): Self = this.set("formNoValidate", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteFormNoValidate: Self = this.set("formNoValidate", js.undefined)
+    def deleteFormNoValidate: Self = this.set("formNoValidate", ())
     
     @scala.inline
     def setFormTarget(value: String): Self = this.set("formTarget", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteFormTarget: Self = this.set("formTarget", js.undefined)
+    def deleteFormTarget: Self = this.set("formTarget", ())
     
     @scala.inline
     def setName(value: String): Self = this.set("name", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteName: Self = this.set("name", js.undefined)
+    def deleteName: Self = this.set("name", ())
     
     @scala.inline
     def setType(value: submit | reset | button): Self = this.set("type", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteType: Self = this.set("type", js.undefined)
+    def deleteType: Self = this.set("type", ())
     
     @scala.inline
     def setValueVarargs(value: String*): Self = this.set("value", js.Array(value :_*))
@@ -122,6 +121,6 @@ object ButtonHTMLAttributes {
     def setValue(value: String | js.Array[String] | Double): Self = this.set("value", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteValue: Self = this.set("value", js.undefined)
+    def deleteValue: Self = this.set("value", ())
   }
 }

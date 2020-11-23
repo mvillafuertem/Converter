@@ -6,7 +6,6 @@ import japgolly.scalajs.react.raw.React.RefHandle
 import japgolly.scalajs.react.vdom.VdomElement
 import japgolly.scalajs.react.vdom.VdomNode
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 //
@@ -29,11 +28,11 @@ import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, J
 @js.native
 trait Props[T] extends js.Object {
   
-  var children: js.UndefOr[Node] = js.native
+  var children: scala.Unit | Node = js.native
   
-  var key: js.UndefOr[Key] = js.native
+  var key: scala.Unit | Key = js.native
   
-  var ref: js.UndefOr[LegacyRef[T]] = js.native
+  var ref: scala.Unit | LegacyRef[T] = js.native
 }
 object Props {
   
@@ -44,13 +43,13 @@ object Props {
   }
   
   @scala.inline
-  implicit class PropsOps[Self <: Props[_], T] (val x: Self with Props[T]) extends AnyVal {
+  implicit class PropsOps[Self <: Props[?], T] (val x: Self & Props[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -65,13 +64,13 @@ object Props {
     def setChildren(value: VdomNode): Self = this.set("children", value.rawNode.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteChildren: Self = this.set("children", js.undefined)
+    def deleteChildren: Self = this.set("children", ())
     
     @scala.inline
     def setKey(value: Key): Self = this.set("key", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteKey: Self = this.set("key", js.undefined)
+    def deleteKey: Self = this.set("key", ())
     
     @scala.inline
     def setRefRefObject(value: RefHandle[T]): Self = this.set("ref", value.asInstanceOf[js.Any])
@@ -83,7 +82,7 @@ object Props {
     def setRef(value: LegacyRef[T]): Self = this.set("ref", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteRef: Self = this.set("ref", js.undefined)
+    def deleteRef: Self = this.set("ref", ())
     
     @scala.inline
     def setRefNull: Self = this.set("ref", null)

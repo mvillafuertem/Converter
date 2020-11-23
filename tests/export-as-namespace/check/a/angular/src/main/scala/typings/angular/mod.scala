@@ -7,7 +7,6 @@ import typings.std.ArrayLike
 import typings.std.Document
 import typings.std.Element
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -50,7 +49,7 @@ object mod {
       * If window.name contains prefix NG_DEFER_BOOTSTRAP! when angular.bootstrap is called, the bootstrap process will be paused until angular.resumeBootstrap() is called.
       * @param extraModules An optional array of modules that should be added to the original list of modules that the app was about to be bootstrapped with.
       */
-    var resumeBootstrap: js.UndefOr[js.Function1[/* extraModules */ js.UndefOr[js.Array[String]], IInjectorService]] = js.native
+    var resumeBootstrap: scala.Unit | (js.Function1[/* extraModules */ scala.Unit | js.Array[String], IInjectorService]) = js.native
   }
   
   // All service providers extend this interface
@@ -75,7 +74,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -99,7 +98,7 @@ object mod {
       
       def annotate(fn: Function): js.Array[String] = js.native
       def annotate(fn: Function, strictDi: Boolean): js.Array[String] = js.native
-      def annotate(inlineAnnotatedFunction: js.Array[_]): js.Array[String] = js.native
+      def annotate(inlineAnnotatedFunction: js.Array[?]): js.Array[String] = js.native
       
       def get[T](name: String): T = js.native
       def get[T](name: String, caller: String): T = js.native
@@ -109,14 +108,18 @@ object mod {
       def instantiate[T](typeConstructor: Instantiable[T]): T = js.native
       def instantiate[T](typeConstructor: Instantiable[T], locals: js.Any): T = js.native
       
-      def invoke[T](func: Injectable[Function | (js.Function1[/* repeated */ _, T])]): T = js.native
+      def invoke[T](func: Injectable[Function | (js.Function1[/* repeated */ js.Any, T])]): T = js.native
+      def invoke[T](func: Injectable[Function | (js.Function1[/* repeated */ js.Any, T])], context: js.Any): T = js.native
       def invoke[T](
-        func: Injectable[Function | (js.Function1[/* repeated */ _, T])],
-        context: js.UndefOr[scala.Nothing],
+        func: Injectable[Function | (js.Function1[/* repeated */ js.Any, T])],
+        context: js.Any,
         locals: js.Any
       ): T = js.native
-      def invoke[T](func: Injectable[Function | (js.Function1[/* repeated */ _, T])], context: js.Any): T = js.native
-      def invoke[T](func: Injectable[Function | (js.Function1[/* repeated */ _, T])], context: js.Any, locals: js.Any): T = js.native
+      def invoke[T](
+        func: Injectable[Function | (js.Function1[/* repeated */ js.Any, T])],
+        context: Unit,
+        locals: js.Any
+      ): T = js.native
       
       var strictDi: Boolean = js.native
     }
@@ -129,7 +132,7 @@ object mod {
     trait Function extends js.Object {
       
       @JSName("$inject")
-      var $inject: js.UndefOr[js.Array[String]] = js.native
+      var $inject: scala.Unit | js.Array[String] = js.native
     }
   }
   

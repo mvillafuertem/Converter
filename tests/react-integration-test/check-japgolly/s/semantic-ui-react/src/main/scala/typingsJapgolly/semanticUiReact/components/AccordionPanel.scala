@@ -15,7 +15,6 @@ import typingsJapgolly.semanticUiReact.accordionPanelMod.default
 import typingsJapgolly.semanticUiReact.accordionTitleMod.AccordionTitleProps
 import typingsJapgolly.semanticUiReact.genericMod.SemanticShorthandItem
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object AccordionPanel {
@@ -37,7 +36,7 @@ object AccordionPanel {
     
     @scala.inline
     def contentFunction3(
-      value: (/* component */ ReactType[AccordionContentProps], AccordionContentProps, /* children */ js.UndefOr[Node | ReactNodeArray]) => Element | Null
+      value: (/* component */ ReactType[AccordionContentProps], AccordionContentProps, /* children */ scala.Unit | Node | ReactNodeArray) => Element | Null
     ): this.type = set("content", js.Any.fromFunction3(value))
     
     @scala.inline
@@ -56,7 +55,7 @@ object AccordionPanel {
     
     @scala.inline
     def titleFunction3(
-      value: (/* component */ ReactType[AccordionTitleProps], AccordionTitleProps, /* children */ js.UndefOr[Node | ReactNodeArray]) => Element | Null
+      value: (/* component */ ReactType[AccordionTitleProps], AccordionTitleProps, /* children */ scala.Unit | Node | ReactNodeArray) => Element | Null
     ): this.type = set("title", js.Any.fromFunction3(value))
     
     @scala.inline

@@ -7,29 +7,28 @@ import typingsJapgolly.react.reactStrings.async
 import typingsJapgolly.react.reactStrings.auto
 import typingsJapgolly.react.reactStrings.sync
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait ImgHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var alt: js.UndefOr[String] = js.native
+  var alt: scala.Unit | String = js.native
   
-  var crossOrigin: js.UndefOr[anonymous | `use-credentials` | _empty] = js.native
+  var crossOrigin: scala.Unit | anonymous | `use-credentials` | _empty = js.native
   
-  var decoding: js.UndefOr[async | auto | sync] = js.native
+  var decoding: scala.Unit | async | auto | sync = js.native
   
-  var height: js.UndefOr[Double | String] = js.native
+  var height: scala.Unit | Double | String = js.native
   
-  var sizes: js.UndefOr[String] = js.native
+  var sizes: scala.Unit | String = js.native
   
-  var src: js.UndefOr[String] = js.native
+  var src: scala.Unit | String = js.native
   
-  var srcSet: js.UndefOr[String] = js.native
+  var srcSet: scala.Unit | String = js.native
   
-  var useMap: js.UndefOr[String] = js.native
+  var useMap: scala.Unit | String = js.native
   
-  var width: js.UndefOr[Double | String] = js.native
+  var width: scala.Unit | Double | String = js.native
 }
 object ImgHTMLAttributes {
   
@@ -40,13 +39,13 @@ object ImgHTMLAttributes {
   }
   
   @scala.inline
-  implicit class ImgHTMLAttributesOps[Self <: ImgHTMLAttributes[_], T] (val x: Self with ImgHTMLAttributes[T]) extends AnyVal {
+  implicit class ImgHTMLAttributesOps[Self <: ImgHTMLAttributes[?], T] (val x: Self & ImgHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -58,54 +57,54 @@ object ImgHTMLAttributes {
     def setAlt(value: String): Self = this.set("alt", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteAlt: Self = this.set("alt", js.undefined)
+    def deleteAlt: Self = this.set("alt", ())
     
     @scala.inline
     def setCrossOrigin(value: anonymous | `use-credentials` | _empty): Self = this.set("crossOrigin", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteCrossOrigin: Self = this.set("crossOrigin", js.undefined)
+    def deleteCrossOrigin: Self = this.set("crossOrigin", ())
     
     @scala.inline
     def setDecoding(value: async | auto | sync): Self = this.set("decoding", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteDecoding: Self = this.set("decoding", js.undefined)
+    def deleteDecoding: Self = this.set("decoding", ())
     
     @scala.inline
     def setHeight(value: Double | String): Self = this.set("height", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteHeight: Self = this.set("height", js.undefined)
+    def deleteHeight: Self = this.set("height", ())
     
     @scala.inline
     def setSizes(value: String): Self = this.set("sizes", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteSizes: Self = this.set("sizes", js.undefined)
+    def deleteSizes: Self = this.set("sizes", ())
     
     @scala.inline
     def setSrc(value: String): Self = this.set("src", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteSrc: Self = this.set("src", js.undefined)
+    def deleteSrc: Self = this.set("src", ())
     
     @scala.inline
     def setSrcSet(value: String): Self = this.set("srcSet", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteSrcSet: Self = this.set("srcSet", js.undefined)
+    def deleteSrcSet: Self = this.set("srcSet", ())
     
     @scala.inline
     def setUseMap(value: String): Self = this.set("useMap", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteUseMap: Self = this.set("useMap", js.undefined)
+    def deleteUseMap: Self = this.set("useMap", ())
     
     @scala.inline
     def setWidth(value: Double | String): Self = this.set("width", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteWidth: Self = this.set("width", js.undefined)
+    def deleteWidth: Self = this.set("width", ())
   }
 }

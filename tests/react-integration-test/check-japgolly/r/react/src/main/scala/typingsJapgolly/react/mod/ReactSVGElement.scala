@@ -2,7 +2,6 @@ package typingsJapgolly.react.mod
 
 import org.scalajs.dom.raw.SVGElement
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 // ReactSVG for ReactSVGElement

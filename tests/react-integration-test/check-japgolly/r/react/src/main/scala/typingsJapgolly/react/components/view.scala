@@ -85,7 +85,6 @@ import typingsJapgolly.react.reactStrings.tree
 import typingsJapgolly.react.reactStrings.vertical
 import typingsJapgolly.react.reactStrings.yes
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object view {
@@ -95,7 +94,7 @@ object view {
   @scala.inline
   class Builder (val args: js.Array[js.Any])
     extends AnyVal
-       with StBuildingComponent[SVGViewElement with js.Object] {
+       with StBuildingComponent[SVGViewElement & js.Object] {
     
     @scala.inline
     def accentHeight(value: Double | String): this.type = set("accentHeight", value.asInstanceOf[js.Any])

@@ -7,7 +7,6 @@ import typingsSlinky.react.mod.HTMLAttributes
 import typingsSlinky.react.mod.ReactType
 import typingsSlinky.reactContextmenu.mod.ContextMenuTriggerProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object ContextMenuTrigger {
@@ -22,10 +21,10 @@ object ContextMenuTrigger {
        with StBuildingComponent[tag.type, typingsSlinky.reactContextmenu.mod.ContextMenuTrigger] {
     
     @scala.inline
-    def attributes(value: HTMLAttributes[_]): this.type = set("attributes", value.asInstanceOf[js.Any])
+    def attributes(value: HTMLAttributes[?]): this.type = set("attributes", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def collect(value: /* data */ js.Any => _): this.type = set("collect", js.Any.fromFunction1(value))
+    def collect(value: /* data */ js.Any => ?): this.type = set("collect", js.Any.fromFunction1(value))
     
     @scala.inline
     def disable(value: Boolean): this.type = set("disable", value.asInstanceOf[js.Any])
@@ -34,13 +33,13 @@ object ContextMenuTrigger {
     def holdToDisplay(value: Double): this.type = set("holdToDisplay", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def renderTagFunctionComponent(value: ReactComponentClass[_]): this.type = set("renderTag", value.asInstanceOf[js.Any])
+    def renderTagFunctionComponent(value: ReactComponentClass[js.Any]): this.type = set("renderTag", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def renderTagComponentClass(value: ReactComponentClass[_]): this.type = set("renderTag", value.asInstanceOf[js.Any])
+    def renderTagComponentClass(value: ReactComponentClass[js.Any]): this.type = set("renderTag", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def renderTag(value: ReactType[_]): this.type = set("renderTag", value.asInstanceOf[js.Any])
+    def renderTag(value: ReactType[js.Any]): this.type = set("renderTag", value.asInstanceOf[js.Any])
   }
   
   def withProps(p: ContextMenuTriggerProps): Builder = new Builder(js.Array(this.component, p.asInstanceOf[js.Any]))

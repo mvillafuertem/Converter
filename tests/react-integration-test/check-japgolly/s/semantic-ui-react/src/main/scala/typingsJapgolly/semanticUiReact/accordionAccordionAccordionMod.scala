@@ -14,14 +14,13 @@ import typingsJapgolly.semanticUiReact.accordionTitleMod.AccordionTitleProps
 import typingsJapgolly.semanticUiReact.genericMod.SemanticShorthandCollection
 import typingsJapgolly.semanticUiReact.genericMod.SemanticShorthandItem
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object accordionAccordionAccordionMod {
   
   @JSImport("semantic-ui-react/dist/commonjs/modules/Accordion/AccordionAccordion", JSImport.Default)
   @js.native
-  val default: ComponentClassP[AccordionAccordionProps with js.Object] = js.native
+  val default: ComponentClassP[AccordionAccordionProps & js.Object] = js.native
   
   @js.native
   trait AccordionAccordionProps
@@ -40,22 +39,22 @@ object accordionAccordionAccordionMod {
   trait StrictAccordionAccordionProps extends js.Object {
     
     /** Index of the currently active panel. */
-    var activeIndex: js.UndefOr[Double | js.Array[Double]] = js.native
+    var activeIndex: scala.Unit | Double | js.Array[Double] = js.native
     
     /** An element type to render as (string or function). */
-    var as: js.UndefOr[js.Any] = js.native
+    var as: scala.Unit | js.Any = js.native
     
     /** Primary content. */
-    var children: js.UndefOr[Node] = js.native
+    var children: scala.Unit | Node = js.native
     
     /** Additional classes. */
-    var className: js.UndefOr[String] = js.native
+    var className: scala.Unit | String = js.native
     
     /** Initial activeIndex value. */
-    var defaultActiveIndex: js.UndefOr[Double | js.Array[Double]] = js.native
+    var defaultActiveIndex: scala.Unit | Double | js.Array[Double] = js.native
     
     /** Only allow one panel open at a time. */
-    var exclusive: js.UndefOr[Boolean] = js.native
+    var exclusive: scala.Unit | Boolean = js.native
     
     /**
       * Called when a panel title is clicked.
@@ -63,16 +62,14 @@ object accordionAccordionAccordionMod {
       * @param {SyntheticEvent} event - React's original SyntheticEvent.
       * @param {AccordionTitleProps} data - All item props.
       */
-    var onTitleClick: js.UndefOr[
-        js.Function2[
-          /* event */ ReactMouseEventFrom[HTMLDivElement], 
-          /* data */ AccordionTitleProps, 
-          Unit
-        ]
-      ] = js.native
+    var onTitleClick: scala.Unit | (js.Function2[
+        /* event */ ReactMouseEventFrom[HTMLDivElement], 
+        /* data */ AccordionTitleProps, 
+        Unit
+      ]) = js.native
     
     /** Shorthand array of props for Accordion. */
-    var panels: js.UndefOr[SemanticShorthandCollection[AccordionPanelProps]] = js.native
+    var panels: scala.Unit | SemanticShorthandCollection[AccordionPanelProps] = js.native
   }
   object StrictAccordionAccordionProps {
     
@@ -89,7 +86,7 @@ object accordionAccordionAccordionMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -104,13 +101,13 @@ object accordionAccordionAccordionMod {
       def setActiveIndex(value: Double | js.Array[Double]): Self = this.set("activeIndex", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteActiveIndex: Self = this.set("activeIndex", js.undefined)
+      def deleteActiveIndex: Self = this.set("activeIndex", ())
       
       @scala.inline
       def setAs(value: js.Any): Self = this.set("as", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAs: Self = this.set("as", js.undefined)
+      def deleteAs: Self = this.set("as", ())
       
       @scala.inline
       def setChildrenVdomElement(value: VdomElement): Self = this.set("children", value.rawElement.asInstanceOf[js.Any])
@@ -119,13 +116,13 @@ object accordionAccordionAccordionMod {
       def setChildren(value: VdomNode): Self = this.set("children", value.rawNode.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteChildren: Self = this.set("children", js.undefined)
+      def deleteChildren: Self = this.set("children", ())
       
       @scala.inline
       def setClassName(value: String): Self = this.set("className", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteClassName: Self = this.set("className", js.undefined)
+      def deleteClassName: Self = this.set("className", ())
       
       @scala.inline
       def setDefaultActiveIndexVarargs(value: Double*): Self = this.set("defaultActiveIndex", js.Array(value :_*))
@@ -134,13 +131,13 @@ object accordionAccordionAccordionMod {
       def setDefaultActiveIndex(value: Double | js.Array[Double]): Self = this.set("defaultActiveIndex", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDefaultActiveIndex: Self = this.set("defaultActiveIndex", js.undefined)
+      def deleteDefaultActiveIndex: Self = this.set("defaultActiveIndex", ())
       
       @scala.inline
       def setExclusive(value: Boolean): Self = this.set("exclusive", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteExclusive: Self = this.set("exclusive", js.undefined)
+      def deleteExclusive: Self = this.set("exclusive", ())
       
       @scala.inline
       def setOnTitleClick(
@@ -148,7 +145,7 @@ object accordionAccordionAccordionMod {
       ): Self = this.set("onTitleClick", js.Any.fromFunction2((t0: /* event */ ReactMouseEventFrom[HTMLDivElement], t1: /* data */ AccordionTitleProps) => (value(t0, t1)).runNow()))
       
       @scala.inline
-      def deleteOnTitleClick: Self = this.set("onTitleClick", js.undefined)
+      def deleteOnTitleClick: Self = this.set("onTitleClick", ())
       
       @scala.inline
       def setPanelsVarargs(value: SemanticShorthandItem[AccordionPanelProps]*): Self = this.set("panels", js.Array(value :_*))
@@ -157,7 +154,7 @@ object accordionAccordionAccordionMod {
       def setPanels(value: SemanticShorthandCollection[AccordionPanelProps]): Self = this.set("panels", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePanels: Self = this.set("panels", js.undefined)
+      def deletePanels: Self = this.set("panels", ())
     }
   }
   

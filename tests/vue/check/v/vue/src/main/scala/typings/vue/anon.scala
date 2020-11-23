@@ -5,7 +5,6 @@ import typings.vue.optionsMod.InjectKey
 import typings.vue.vnodeMod.VNode
 import typings.vue.vueMod.CreateElement
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -13,9 +12,9 @@ object anon {
   @js.native
   trait Default extends js.Object {
     
-    var default: js.UndefOr[js.Any] = js.native
+    var default: scala.Unit | js.Any = js.native
     
-    var from: js.UndefOr[InjectKey] = js.native
+    var from: scala.Unit | InjectKey = js.native
   }
   object Default {
     
@@ -32,7 +31,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -44,22 +43,22 @@ object anon {
       def setDefault(value: js.Any): Self = this.set("default", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDefault: Self = this.set("default", js.undefined)
+      def deleteDefault: Self = this.set("default", ())
       
       @scala.inline
       def setFrom(value: InjectKey): Self = this.set("from", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteFrom: Self = this.set("from", js.undefined)
+      def deleteFrom: Self = this.set("from", ())
     }
   }
   
   @js.native
   trait Event extends js.Object {
     
-    var event: js.UndefOr[String] = js.native
+    var event: scala.Unit | String = js.native
     
-    var prop: js.UndefOr[String] = js.native
+    var prop: scala.Unit | String = js.native
   }
   object Event {
     
@@ -76,7 +75,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -88,13 +87,13 @@ object anon {
       def setEvent(value: String): Self = this.set("event", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteEvent: Self = this.set("event", js.undefined)
+      def deleteEvent: Self = this.set("event", ())
       
       @scala.inline
       def setProp(value: String): Self = this.set("prop", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteProp: Self = this.set("prop", js.undefined)
+      def deleteProp: Self = this.set("prop", ())
     }
   }
   
@@ -114,7 +113,7 @@ object anon {
   
   @js.native
   trait Instantiable[T]
-    extends Instantiable1[/* args (repeated) */ js.Any, T with js.Object]
+    extends Instantiable1[/* args (repeated) */ js.Any, T & js.Object]
   
   @js.native
   trait Render extends js.Object {
@@ -138,7 +137,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -179,7 +178,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {

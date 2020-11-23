@@ -3,7 +3,6 @@ package typings.node
 import typings.node.NodeJS.ReadableStream
 import typings.node.NodeJS.WritableStream
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object streamMod {
@@ -20,13 +19,13 @@ object streamMod {
     def end(cb: js.Function): Unit = js.native
     def end(chunk: js.Any): Unit = js.native
     def end(chunk: js.Any, cb: js.Function): Unit = js.native
-    def end(chunk: js.Any, encoding: js.UndefOr[scala.Nothing], cb: js.Function): Unit = js.native
     def end(chunk: js.Any, encoding: String): Unit = js.native
     def end(chunk: js.Any, encoding: String, cb: js.Function): Unit = js.native
+    def end(chunk: js.Any, encoding: Unit, cb: js.Function): Unit = js.native
     def end(str: String): Unit = js.native
-    def end(str: String, encoding: js.UndefOr[scala.Nothing], cb: js.Function): Unit = js.native
     def end(str: String, encoding: String): Unit = js.native
     def end(str: String, encoding: String, cb: js.Function): Unit = js.native
+    def end(str: String, encoding: Unit, cb: js.Function): Unit = js.native
     
     var writable: Boolean = js.native
   }
@@ -52,8 +51,8 @@ object streamMod {
        with WritableStream {
     
     def end(str: String): Unit = js.native
-    def end(str: String, encoding: js.UndefOr[scala.Nothing], cb: js.Function): Unit = js.native
     def end(str: String, encoding: String): Unit = js.native
     def end(str: String, encoding: String, cb: js.Function): Unit = js.native
+    def end(str: String, encoding: Unit, cb: js.Function): Unit = js.native
   }
 }

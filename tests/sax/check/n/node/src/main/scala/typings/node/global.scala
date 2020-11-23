@@ -4,7 +4,6 @@ import typings.node.NodeJS.Global
 import typings.std.ArrayBuffer
 import typings.std.Uint8Array
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object global {
@@ -36,7 +35,7 @@ object global {
       *
       * @param array The octets to store.
       */
-    def this(array: js.Array[_]) = this()
+    def this(array: js.Array[?]) = this()
     /**
       * Allocates a new buffer containing the given {array} of octets.
       *
@@ -76,7 +75,7 @@ object global {
       */
     @JSGlobal("Buffer.from")
     @js.native
-    def from(array: js.Array[_]): typings.node.Buffer = js.native
+    def from(array: js.Array[?]): typings.node.Buffer = js.native
   }
   
   /************************************************
@@ -95,7 +94,7 @@ object global {
   @JSGlobal("SlowBuffer")
   @js.native
   class SlowBuffer protected () extends NodeBuffer {
-    def this(array: js.Array[_]) = this()
+    def this(array: js.Array[?]) = this()
     def this(size: Double) = this()
     def this(size: Uint8Array) = this()
     def this(str: String) = this()

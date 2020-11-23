@@ -3,7 +3,6 @@ package typings.winston
 import typings.winston.configMod.AbstractConfigSetLevels
 import typings.winston.configMod.Config
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -11,7 +10,7 @@ object mod {
   @js.native
   trait LoggerOptions extends js.Object {
     
-    var levels: js.UndefOr[AbstractConfigSetLevels] = js.native
+    var levels: scala.Unit | AbstractConfigSetLevels = js.native
   }
   object LoggerOptions {
     
@@ -28,7 +27,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -40,7 +39,7 @@ object mod {
       def setLevels(value: AbstractConfigSetLevels): Self = this.set("levels", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteLevels: Self = this.set("levels", js.undefined)
+      def deleteLevels: Self = this.set("levels", ())
     }
   }
   

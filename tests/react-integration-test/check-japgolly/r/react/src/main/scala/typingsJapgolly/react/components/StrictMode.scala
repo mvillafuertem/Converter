@@ -3,7 +3,6 @@ package typingsJapgolly.react.components
 import typingsJapgolly.StBuildingComponent.Default
 import typingsJapgolly.react.anon.Children
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object StrictMode {

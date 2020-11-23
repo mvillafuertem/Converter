@@ -1,17 +1,16 @@
 package typingsJapgolly.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait TableHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var cellPadding: js.UndefOr[Double | String] = js.native
+  var cellPadding: scala.Unit | Double | String = js.native
   
-  var cellSpacing: js.UndefOr[Double | String] = js.native
+  var cellSpacing: scala.Unit | Double | String = js.native
   
-  var summary: js.UndefOr[String] = js.native
+  var summary: scala.Unit | String = js.native
 }
 object TableHTMLAttributes {
   
@@ -22,13 +21,13 @@ object TableHTMLAttributes {
   }
   
   @scala.inline
-  implicit class TableHTMLAttributesOps[Self <: TableHTMLAttributes[_], T] (val x: Self with TableHTMLAttributes[T]) extends AnyVal {
+  implicit class TableHTMLAttributesOps[Self <: TableHTMLAttributes[?], T] (val x: Self & TableHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -40,18 +39,18 @@ object TableHTMLAttributes {
     def setCellPadding(value: Double | String): Self = this.set("cellPadding", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteCellPadding: Self = this.set("cellPadding", js.undefined)
+    def deleteCellPadding: Self = this.set("cellPadding", ())
     
     @scala.inline
     def setCellSpacing(value: Double | String): Self = this.set("cellSpacing", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteCellSpacing: Self = this.set("cellSpacing", js.undefined)
+    def deleteCellSpacing: Self = this.set("cellSpacing", ())
     
     @scala.inline
     def setSummary(value: String): Self = this.set("summary", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteSummary: Self = this.set("summary", js.undefined)
+    def deleteSummary: Self = this.set("summary", ())
   }
 }

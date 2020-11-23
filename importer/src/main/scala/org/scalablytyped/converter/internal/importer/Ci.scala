@@ -116,7 +116,9 @@ object Ci {
                 stdLibs              = SortedSet("esnext.full"),
                 expandTypeMappings   = EnabledTypeMappingExpansion.DefaultSelection,
                 versions = Versions(
-                  if (flags contains "-scala212") Versions.Scala212 else Versions.Scala213,
+                  if (flags contains "-dotty") Versions.Dotty
+                  else if (flags contains "-scala212") Versions.Scala212
+                  else Versions.Scala213,
                   Versions.ScalaJs1,
                 ),
                 organization           = organization,

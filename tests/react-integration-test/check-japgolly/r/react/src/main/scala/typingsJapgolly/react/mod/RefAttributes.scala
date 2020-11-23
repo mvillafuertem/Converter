@@ -3,13 +3,12 @@ package typingsJapgolly.react.mod
 import japgolly.scalajs.react.Callback
 import japgolly.scalajs.react.raw.React.RefHandle
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait RefAttributes[T] extends Attributes {
   
-  var ref: js.UndefOr[japgolly.scalajs.react.raw.React.Ref] = js.native
+  var ref: scala.Unit | japgolly.scalajs.react.raw.React.Ref = js.native
 }
 object RefAttributes {
   
@@ -20,13 +19,13 @@ object RefAttributes {
   }
   
   @scala.inline
-  implicit class RefAttributesOps[Self <: RefAttributes[_], T] (val x: Self with RefAttributes[T]) extends AnyVal {
+  implicit class RefAttributesOps[Self <: RefAttributes[?], T] (val x: Self & RefAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -44,7 +43,7 @@ object RefAttributes {
     def setRef(value: japgolly.scalajs.react.raw.React.Ref): Self = this.set("ref", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteRef: Self = this.set("ref", js.undefined)
+    def deleteRef: Self = this.set("ref", ())
     
     @scala.inline
     def setRefNull: Self = this.set("ref", null)

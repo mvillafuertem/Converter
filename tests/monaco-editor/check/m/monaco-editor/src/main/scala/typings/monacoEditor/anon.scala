@@ -2,7 +2,6 @@ package typings.monacoEditor
 
 import typings.monacoEditor.monaco.Promise
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -12,24 +11,24 @@ object anon {
     
     var key: String = js.native
     
-    var value: Promise[T, _] = js.native
+    var value: Promise[T, ?] = js.native
   }
   object Key {
     
     @scala.inline
-    def apply[T](key: String, value: Promise[T, _]): Key[T] = {
+    def apply[T](key: String, value: Promise[T, ?]): Key[T] = {
       val __obj = js.Dynamic.literal(key = key.asInstanceOf[js.Any], value = value.asInstanceOf[js.Any])
       __obj.asInstanceOf[Key[T]]
     }
     
     @scala.inline
-    implicit class KeyOps[Self <: Key[_], T] (val x: Self with Key[T]) extends AnyVal {
+    implicit class KeyOps[Self <: Key[?], T] (val x: Self & Key[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -41,7 +40,7 @@ object anon {
       def setKey(value: String): Self = this.set("key", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def setValue(value: Promise[T, _]): Self = this.set("value", value.asInstanceOf[js.Any])
+      def setValue(value: Promise[T, ?]): Self = this.set("value", value.asInstanceOf[js.Any])
     }
   }
 }

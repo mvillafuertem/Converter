@@ -1,13 +1,12 @@
 package typingsSlinky.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait DataHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var value: js.UndefOr[String | js.Array[String] | Double] = js.native
+  var value: scala.Unit | String | js.Array[String] | Double = js.native
 }
 object DataHTMLAttributes {
   
@@ -18,13 +17,13 @@ object DataHTMLAttributes {
   }
   
   @scala.inline
-  implicit class DataHTMLAttributesOps[Self <: DataHTMLAttributes[_], T] (val x: Self with DataHTMLAttributes[T]) extends AnyVal {
+  implicit class DataHTMLAttributesOps[Self <: DataHTMLAttributes[?], T] (val x: Self & DataHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -39,6 +38,6 @@ object DataHTMLAttributes {
     def setValue(value: String | js.Array[String] | Double): Self = this.set("value", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteValue: Self = this.set("value", js.undefined)
+    def deleteValue: Self = this.set("value", ())
   }
 }

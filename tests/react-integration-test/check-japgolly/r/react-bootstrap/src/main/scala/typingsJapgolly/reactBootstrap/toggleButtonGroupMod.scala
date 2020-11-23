@@ -12,7 +12,6 @@ import typingsJapgolly.reactBootstrap.reactBootstrapStrings.onChange
 import typingsJapgolly.reactBootstrap.reactBootstrapStrings.radio
 import typingsJapgolly.reactBootstrap.reactBootstrapStrings.value
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object toggleButtonGroupMod {
@@ -29,13 +28,13 @@ object toggleButtonGroupMod {
       * You'll usually want to use string|number|string[]|number[] here,
       * but you can technically use any|any[].
       */
-    var defaultValue: js.UndefOr[js.Any] = js.native
+    var defaultValue: scala.Unit | js.Any = js.native
     
     /**
       * You'll usually want to use string|number|string[]|number[] here,
       * but you can technically use any|any[].
       */
-    var value: js.UndefOr[js.Any] = js.native
+    var value: scala.Unit | js.Any = js.native
   }
   object BaseProps {
     
@@ -52,7 +51,7 @@ object toggleButtonGroupMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -64,22 +63,22 @@ object toggleButtonGroupMod {
       def setDefaultValue(value: js.Any): Self = this.set("defaultValue", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDefaultValue: Self = this.set("defaultValue", js.undefined)
+      def deleteDefaultValue: Self = this.set("defaultValue", ())
       
       @scala.inline
       def setValue(value: js.Any): Self = this.set("value", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteValue: Self = this.set("value", js.undefined)
+      def deleteValue: Self = this.set("value", ())
     }
   }
   
   @js.native
   trait CheckboxProps extends js.Object {
     
-    var name: js.UndefOr[String] = js.native
+    var name: scala.Unit | String = js.native
     
-    var onChange: js.UndefOr[js.Function1[/* values */ js.Array[_], Unit]] = js.native
+    var onChange: scala.Unit | (js.Function1[/* values */ js.Array[?], Unit]) = js.native
     
     var `type`: checkbox = js.native
   }
@@ -99,7 +98,7 @@ object toggleButtonGroupMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -114,13 +113,13 @@ object toggleButtonGroupMod {
       def setName(value: String): Self = this.set("name", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteName: Self = this.set("name", js.undefined)
+      def deleteName: Self = this.set("name", ())
       
       @scala.inline
       def setOnChange(value: /* values */ js.Array[js.Any] => Callback): Self = this.set("onChange", js.Any.fromFunction1((t0: /* values */ js.Array[js.Any]) => value(t0).runNow()))
       
       @scala.inline
-      def deleteOnChange: Self = this.set("onChange", js.undefined)
+      def deleteOnChange: Self = this.set("onChange", ())
     }
   }
   
@@ -130,7 +129,7 @@ object toggleButtonGroupMod {
     /** Required if `type` is set to "radio" */
     var name: String = js.native
     
-    var onChange: js.UndefOr[js.Function1[/* value */ js.Any, Unit]] = js.native
+    var onChange: scala.Unit | (js.Function1[/* value */ js.Any, Unit]) = js.native
     
     var `type`: radio = js.native
   }
@@ -150,7 +149,7 @@ object toggleButtonGroupMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -168,7 +167,7 @@ object toggleButtonGroupMod {
       def setOnChange(value: /* value */ js.Any => Callback): Self = this.set("onChange", js.Any.fromFunction1((t0: /* value */ js.Any) => value(t0).runNow()))
       
       @scala.inline
-      def deleteOnChange: Self = this.set("onChange", js.undefined)
+      def deleteOnChange: Self = this.set("onChange", ())
     }
   }
   
@@ -176,5 +175,5 @@ object toggleButtonGroupMod {
   trait ToggleButtonGroup
     extends Component[ToggleButtonGroupProps, js.Object, js.Any]
   
-  type ToggleButtonGroupProps = BaseProps with (RadioProps | CheckboxProps) with (Omit[ButtonGroupProps, onChange]) with (Omit[HTMLProps[ToggleButtonGroup], defaultValue | `type` | value | onChange])
+  type ToggleButtonGroupProps = BaseProps & (RadioProps | CheckboxProps) & (Omit[ButtonGroupProps, onChange]) & (Omit[HTMLProps[ToggleButtonGroup], defaultValue | `type` | value | onChange])
 }

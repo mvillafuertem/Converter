@@ -4,7 +4,6 @@ import typingsJapgolly.react.mod.Component
 import typingsJapgolly.react.mod.HTMLProps
 import typingsJapgolly.reactBootstrap.mod.Sizes
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object buttonGroupMod {
@@ -21,15 +20,15 @@ object buttonGroupMod {
   @js.native
   trait ButtonGroupProps extends HTMLProps[ButtonGroup] {
     
-    var block: js.UndefOr[Boolean] = js.native
+    var block: scala.Unit | Boolean = js.native
     
-    var bsSize: js.UndefOr[Sizes] = js.native
+    var bsSize: scala.Unit | Sizes = js.native
     
-    var bsStyle: js.UndefOr[String] = js.native
+    var bsStyle: scala.Unit | String = js.native
     
-    var justified: js.UndefOr[Boolean] = js.native
+    var justified: scala.Unit | Boolean = js.native
     
-    var vertical: js.UndefOr[Boolean] = js.native
+    var vertical: scala.Unit | Boolean = js.native
   }
   object ButtonGroupProps {
     
@@ -46,7 +45,7 @@ object buttonGroupMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -58,31 +57,31 @@ object buttonGroupMod {
       def setBlock(value: Boolean): Self = this.set("block", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteBlock: Self = this.set("block", js.undefined)
+      def deleteBlock: Self = this.set("block", ())
       
       @scala.inline
       def setBsSize(value: Sizes): Self = this.set("bsSize", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteBsSize: Self = this.set("bsSize", js.undefined)
+      def deleteBsSize: Self = this.set("bsSize", ())
       
       @scala.inline
       def setBsStyle(value: String): Self = this.set("bsStyle", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteBsStyle: Self = this.set("bsStyle", js.undefined)
+      def deleteBsStyle: Self = this.set("bsStyle", ())
       
       @scala.inline
       def setJustified(value: Boolean): Self = this.set("justified", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteJustified: Self = this.set("justified", js.undefined)
+      def deleteJustified: Self = this.set("justified", ())
       
       @scala.inline
       def setVertical(value: Boolean): Self = this.set("vertical", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteVertical: Self = this.set("vertical", js.undefined)
+      def deleteVertical: Self = this.set("vertical", ())
     }
   }
 }

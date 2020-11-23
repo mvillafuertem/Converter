@@ -4,16 +4,15 @@ import org.scalajs.dom.raw.Event
 import org.scalajs.dom.raw.EventTarget
 import slinky.web.SyntheticFocusEvent
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
-trait FocusEvent[T] extends BaseSyntheticEvent[Event, EventTarget with T, EventTarget] {
+trait FocusEvent[T] extends BaseSyntheticEvent[Event, EventTarget & T, EventTarget] {
   
   var relatedTarget: EventTarget = js.native
   
   @JSName("target")
-  var target_FocusEvent: EventTarget with T = js.native
+  var target_FocusEvent: EventTarget & T = js.native
 }
 object FocusEvent {
   
@@ -21,7 +20,7 @@ object FocusEvent {
   def apply[T](
     bubbles: Boolean,
     cancelable: Boolean,
-    currentTarget: EventTarget with T,
+    currentTarget: EventTarget & T,
     defaultPrevented: Boolean,
     eventPhase: Double,
     isDefaultPrevented: () => Boolean,
@@ -32,7 +31,7 @@ object FocusEvent {
     preventDefault: () => Unit,
     relatedTarget: EventTarget,
     stopPropagation: () => Unit,
-    target: EventTarget with T,
+    target: EventTarget & T,
     timeStamp: Double,
     `type`: String
   ): FocusEvent[T] = {
@@ -42,13 +41,13 @@ object FocusEvent {
   }
   
   @scala.inline
-  implicit class FocusEventOps[Self <: SyntheticFocusEvent[_], T] (val x: Self with SyntheticFocusEvent[T]) extends AnyVal {
+  implicit class FocusEventOps[Self <: SyntheticFocusEvent[?], T] (val x: Self & SyntheticFocusEvent[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -60,6 +59,6 @@ object FocusEvent {
     def setRelatedTarget(value: EventTarget): Self = this.set("relatedTarget", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def setTarget(value: EventTarget with T): Self = this.set("target", value.asInstanceOf[js.Any])
+    def setTarget(value: EventTarget & T): Self = this.set("target", value.asInstanceOf[js.Any])
   }
 }

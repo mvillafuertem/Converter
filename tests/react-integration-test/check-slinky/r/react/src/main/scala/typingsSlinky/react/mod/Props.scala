@@ -2,7 +2,6 @@ package typingsSlinky.react.mod
 
 import slinky.core.facade.ReactRef
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 //
@@ -25,11 +24,11 @@ import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, J
 @js.native
 trait Props[T] extends js.Object {
   
-  var children: js.UndefOr[slinky.core.facade.ReactElement] = js.native
+  var children: scala.Unit | slinky.core.facade.ReactElement = js.native
   
-  var key: js.UndefOr[Key] = js.native
+  var key: scala.Unit | Key = js.native
   
-  var ref: js.UndefOr[LegacyRef[T]] = js.native
+  var ref: scala.Unit | LegacyRef[T] = js.native
 }
 object Props {
   
@@ -40,13 +39,13 @@ object Props {
   }
   
   @scala.inline
-  implicit class PropsOps[Self <: Props[_], T] (val x: Self with Props[T]) extends AnyVal {
+  implicit class PropsOps[Self <: Props[?], T] (val x: Self & Props[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -61,13 +60,13 @@ object Props {
     def setChildren(value: slinky.core.facade.ReactElement): Self = this.set("children", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteChildren: Self = this.set("children", js.undefined)
+    def deleteChildren: Self = this.set("children", ())
     
     @scala.inline
     def setKey(value: Key): Self = this.set("key", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteKey: Self = this.set("key", js.undefined)
+    def deleteKey: Self = this.set("key", ())
     
     @scala.inline
     def setRefRefObject(value: ReactRef[T]): Self = this.set("ref", value.asInstanceOf[js.Any])
@@ -79,7 +78,7 @@ object Props {
     def setRef(value: LegacyRef[T]): Self = this.set("ref", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteRef: Self = this.set("ref", js.undefined)
+    def deleteRef: Self = this.set("ref", ())
     
     @scala.inline
     def setRefNull: Self = this.set("ref", null)

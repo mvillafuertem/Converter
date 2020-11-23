@@ -10,7 +10,6 @@ import typingsJapgolly.semanticUiReact.accordionAccordionAccordionMod.StrictAcco
 import typingsJapgolly.semanticUiReact.accordionContentMod.AccordionContentProps
 import typingsJapgolly.semanticUiReact.accordionTitleMod.AccordionTitleProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object accordionAccordionMod {
@@ -23,11 +22,11 @@ object accordionAccordionMod {
   trait AccordionComponent
     extends ComponentClass[AccordionProps, js.Object] {
     
-    var Accordion: ComponentClassP[AccordionAccordionProps with js.Object] = js.native
+    var Accordion: ComponentClassP[AccordionAccordionProps & js.Object] = js.native
     
     var Content: StatelessComponent[AccordionContentProps] = js.native
     
-    var Title: ComponentClassP[AccordionTitleProps with js.Object] = js.native
+    var Title: ComponentClassP[AccordionTitleProps & js.Object] = js.native
   }
   
   @js.native
@@ -47,13 +46,13 @@ object accordionAccordionMod {
   trait StrictAccordionProps extends StrictAccordionAccordionProps {
     
     /** Format to take up the width of its container. */
-    var fluid: js.UndefOr[Boolean] = js.native
+    var fluid: scala.Unit | Boolean = js.native
     
     /** Format for dark backgrounds. */
-    var inverted: js.UndefOr[Boolean] = js.native
+    var inverted: scala.Unit | Boolean = js.native
     
     /** Adds some basic styling to accordion panels. */
-    var styled: js.UndefOr[Boolean] = js.native
+    var styled: scala.Unit | Boolean = js.native
   }
   object StrictAccordionProps {
     
@@ -70,7 +69,7 @@ object accordionAccordionMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -82,19 +81,19 @@ object accordionAccordionMod {
       def setFluid(value: Boolean): Self = this.set("fluid", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteFluid: Self = this.set("fluid", js.undefined)
+      def deleteFluid: Self = this.set("fluid", ())
       
       @scala.inline
       def setInverted(value: Boolean): Self = this.set("inverted", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteInverted: Self = this.set("inverted", js.undefined)
+      def deleteInverted: Self = this.set("inverted", ())
       
       @scala.inline
       def setStyled(value: Boolean): Self = this.set("styled", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteStyled: Self = this.set("styled", js.undefined)
+      def deleteStyled: Self = this.set("styled", ())
     }
   }
   

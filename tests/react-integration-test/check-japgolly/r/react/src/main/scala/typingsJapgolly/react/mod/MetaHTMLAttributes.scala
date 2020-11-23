@@ -1,19 +1,18 @@
 package typingsJapgolly.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait MetaHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var charSet: js.UndefOr[String] = js.native
+  var charSet: scala.Unit | String = js.native
   
-  var content: js.UndefOr[String] = js.native
+  var content: scala.Unit | String = js.native
   
-  var httpEquiv: js.UndefOr[String] = js.native
+  var httpEquiv: scala.Unit | String = js.native
   
-  var name: js.UndefOr[String] = js.native
+  var name: scala.Unit | String = js.native
 }
 object MetaHTMLAttributes {
   
@@ -24,13 +23,13 @@ object MetaHTMLAttributes {
   }
   
   @scala.inline
-  implicit class MetaHTMLAttributesOps[Self <: MetaHTMLAttributes[_], T] (val x: Self with MetaHTMLAttributes[T]) extends AnyVal {
+  implicit class MetaHTMLAttributesOps[Self <: MetaHTMLAttributes[?], T] (val x: Self & MetaHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -42,24 +41,24 @@ object MetaHTMLAttributes {
     def setCharSet(value: String): Self = this.set("charSet", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteCharSet: Self = this.set("charSet", js.undefined)
+    def deleteCharSet: Self = this.set("charSet", ())
     
     @scala.inline
     def setContent(value: String): Self = this.set("content", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteContent: Self = this.set("content", js.undefined)
+    def deleteContent: Self = this.set("content", ())
     
     @scala.inline
     def setHttpEquiv(value: String): Self = this.set("httpEquiv", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteHttpEquiv: Self = this.set("httpEquiv", js.undefined)
+    def deleteHttpEquiv: Self = this.set("httpEquiv", ())
     
     @scala.inline
     def setName(value: String): Self = this.set("name", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteName: Self = this.set("name", js.undefined)
+    def deleteName: Self = this.set("name", ())
   }
 }

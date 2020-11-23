@@ -5,7 +5,6 @@ import typings.awsSdk.documentClientMod.DocumentClient.DocumentClientOptions
 import typings.awsSdk.dynamodbMod.ClientConfiguration
 import typings.awsSdk.dynamodbMod.^
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object documentClientMod {
@@ -16,7 +15,7 @@ object documentClientMod {
     * Creates a DynamoDB document client with a set of configuration options.
     */
   class DocumentClient () extends js.Object {
-    def this(options: DocumentClientOptions with ClientConfiguration) = this()
+    def this(options: DocumentClientOptions & ClientConfiguration) = this()
   }
   object DocumentClient {
     
@@ -27,14 +26,14 @@ object documentClientMod {
         * An optional flag indicating that the document client should cast
         * empty strings, buffers, and sets to NULL shapes
         */
-      var convertEmptyValues: js.UndefOr[Boolean] = js.native
+      var convertEmptyValues: scala.Unit | Boolean = js.native
       
       /**
         * Whether to return numbers as a NumberValue object instead of
         * converting them to native JavaScript numbers. This allows for the
         * safe round-trip transport of numbers of arbitrary size.
         */
-      var wrapNumbers: js.UndefOr[Boolean] = js.native
+      var wrapNumbers: scala.Unit | Boolean = js.native
     }
     object ConverterOptions {
       
@@ -51,7 +50,7 @@ object documentClientMod {
         def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
         
         @scala.inline
-        def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+        def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
         
         @scala.inline
         def set(key: String, value: js.Any): Self = {
@@ -63,13 +62,13 @@ object documentClientMod {
         def setConvertEmptyValues(value: Boolean): Self = this.set("convertEmptyValues", value.asInstanceOf[js.Any])
         
         @scala.inline
-        def deleteConvertEmptyValues: Self = this.set("convertEmptyValues", js.undefined)
+        def deleteConvertEmptyValues: Self = this.set("convertEmptyValues", ())
         
         @scala.inline
         def setWrapNumbers(value: Boolean): Self = this.set("wrapNumbers", value.asInstanceOf[js.Any])
         
         @scala.inline
-        def deleteWrapNumbers: Self = this.set("wrapNumbers", js.undefined)
+        def deleteWrapNumbers: Self = this.set("wrapNumbers", ())
       }
     }
     
@@ -79,12 +78,12 @@ object documentClientMod {
       /**
         * An optional map of parameters to bind to every request sent by this service object.
         */
-      var params: js.UndefOr[StringDictionary[js.Any]] = js.native
+      var params: scala.Unit | StringDictionary[js.Any] = js.native
       
       /**
         * An optional pre-configured instance of the AWS.DynamoDB service object to use for requests. The object may bound parameters used by the document client.
         */
-      var service: js.UndefOr[^] = js.native
+      var service: scala.Unit | ^ = js.native
     }
     object DocumentClientOptions {
       
@@ -101,7 +100,7 @@ object documentClientMod {
         def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
         
         @scala.inline
-        def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+        def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
         
         @scala.inline
         def set(key: String, value: js.Any): Self = {
@@ -113,13 +112,13 @@ object documentClientMod {
         def setParams(value: StringDictionary[js.Any]): Self = this.set("params", value.asInstanceOf[js.Any])
         
         @scala.inline
-        def deleteParams: Self = this.set("params", js.undefined)
+        def deleteParams: Self = this.set("params", ())
         
         @scala.inline
         def setService(value: ^): Self = this.set("service", value.asInstanceOf[js.Any])
         
         @scala.inline
-        def deleteService: Self = this.set("service", js.undefined)
+        def deleteService: Self = this.set("service", ())
       }
     }
     

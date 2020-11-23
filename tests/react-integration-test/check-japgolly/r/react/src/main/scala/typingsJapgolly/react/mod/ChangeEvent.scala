@@ -7,14 +7,13 @@ import org.scalajs.dom.raw.Element
 import org.scalajs.dom.raw.Event
 import org.scalajs.dom.raw.EventTarget
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
-trait ChangeEvent[T] extends BaseSyntheticEvent[Event, EventTarget with T, EventTarget] {
+trait ChangeEvent[T] extends BaseSyntheticEvent[Event, EventTarget & T, EventTarget] {
   
   @JSName("target")
-  var target_ChangeEvent: EventTarget with T = js.native
+  var target_ChangeEvent: EventTarget & T = js.native
 }
 object ChangeEvent {
   
@@ -22,7 +21,7 @@ object ChangeEvent {
   def apply[T](
     bubbles: Boolean,
     cancelable: Boolean,
-    currentTarget: EventTarget with T,
+    currentTarget: EventTarget & T,
     defaultPrevented: Boolean,
     eventPhase: Double,
     isDefaultPrevented: CallbackTo[Boolean],
@@ -32,7 +31,7 @@ object ChangeEvent {
     persist: Callback,
     preventDefault: Callback,
     stopPropagation: Callback,
-    target: EventTarget with T,
+    target: EventTarget & T,
     timeStamp: Double,
     `type`: String
   ): ChangeEvent[T] = {
@@ -42,13 +41,13 @@ object ChangeEvent {
   }
   
   @scala.inline
-  implicit class ChangeEventOps[Self <: ReactEventFrom[Element], T] (val x: Self with (ReactEventFrom[T with Element])) extends AnyVal {
+  implicit class ChangeEventOps[Self <: ReactEventFrom[Element], T] (val x: Self & (ReactEventFrom[T & Element])) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -57,6 +56,6 @@ object ChangeEvent {
     }
     
     @scala.inline
-    def setTarget(value: EventTarget with T): Self = this.set("target", value.asInstanceOf[js.Any])
+    def setTarget(value: EventTarget & T): Self = this.set("target", value.asInstanceOf[js.Any])
   }
 }

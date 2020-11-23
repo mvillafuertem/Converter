@@ -59,7 +59,6 @@ import typingsSlinky.react.reactStrings.time
 import typingsSlinky.react.reactStrings.tree
 import typingsSlinky.react.reactStrings.vertical
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object base {
@@ -69,7 +68,7 @@ object base {
   @scala.inline
   class Builder (val args: js.Array[js.Any])
     extends AnyVal
-       with StBuildingComponent[tag.type, HTMLBaseElement with js.Object] {
+       with StBuildingComponent[tag.type, HTMLBaseElement & js.Object] {
     
     @scala.inline
     def about(value: String): this.type = set("about", value.asInstanceOf[js.Any])
@@ -315,7 +314,7 @@ object base {
     def onAuxClick(value: SyntheticMouseEvent[HTMLBaseElement] => Unit): this.type = set("onAuxClick", js.Any.fromFunction1(value))
     
     @scala.inline
-    def onBeforeInput(value: SyntheticEvent[EventTarget with HTMLBaseElement, Event] => Unit): this.type = set("onBeforeInput", js.Any.fromFunction1(value))
+    def onBeforeInput(value: SyntheticEvent[EventTarget & HTMLBaseElement, Event] => Unit): this.type = set("onBeforeInput", js.Any.fromFunction1(value))
     
     @scala.inline
     def onBlur(value: SyntheticFocusEvent[HTMLBaseElement] => Unit): this.type = set("onBlur", js.Any.fromFunction1(value))
@@ -327,7 +326,7 @@ object base {
     def onCanPlayThrough(value: SyntheticEvent[Event, HTMLBaseElement] => Unit): this.type = set("onCanPlayThrough", js.Any.fromFunction1(value))
     
     @scala.inline
-    def onChange(value: SyntheticEvent[EventTarget with HTMLBaseElement, Event] => Unit): this.type = set("onChange", js.Any.fromFunction1(value))
+    def onChange(value: SyntheticEvent[EventTarget & HTMLBaseElement, Event] => Unit): this.type = set("onChange", js.Any.fromFunction1(value))
     
     @scala.inline
     def onClick(value: SyntheticMouseEvent[HTMLBaseElement] => Unit): this.type = set("onClick", js.Any.fromFunction1(value))
@@ -396,10 +395,10 @@ object base {
     def onFocus(value: SyntheticFocusEvent[HTMLBaseElement] => Unit): this.type = set("onFocus", js.Any.fromFunction1(value))
     
     @scala.inline
-    def onInput(value: SyntheticEvent[EventTarget with HTMLBaseElement, Event] => Unit): this.type = set("onInput", js.Any.fromFunction1(value))
+    def onInput(value: SyntheticEvent[EventTarget & HTMLBaseElement, Event] => Unit): this.type = set("onInput", js.Any.fromFunction1(value))
     
     @scala.inline
-    def onInvalid(value: SyntheticEvent[EventTarget with HTMLBaseElement, Event] => Unit): this.type = set("onInvalid", js.Any.fromFunction1(value))
+    def onInvalid(value: SyntheticEvent[EventTarget & HTMLBaseElement, Event] => Unit): this.type = set("onInvalid", js.Any.fromFunction1(value))
     
     @scala.inline
     def onKeyDown(value: SyntheticKeyboardEvent[HTMLBaseElement] => Unit): this.type = set("onKeyDown", js.Any.fromFunction1(value))
@@ -486,7 +485,7 @@ object base {
     def onRateChange(value: SyntheticEvent[Event, HTMLBaseElement] => Unit): this.type = set("onRateChange", js.Any.fromFunction1(value))
     
     @scala.inline
-    def onReset(value: SyntheticEvent[EventTarget with HTMLBaseElement, Event] => Unit): this.type = set("onReset", js.Any.fromFunction1(value))
+    def onReset(value: SyntheticEvent[EventTarget & HTMLBaseElement, Event] => Unit): this.type = set("onReset", js.Any.fromFunction1(value))
     
     @scala.inline
     def onScroll(value: SyntheticUIEvent[HTMLBaseElement] => Unit): this.type = set("onScroll", js.Any.fromFunction1(value))
@@ -504,7 +503,7 @@ object base {
     def onStalled(value: SyntheticEvent[Event, HTMLBaseElement] => Unit): this.type = set("onStalled", js.Any.fromFunction1(value))
     
     @scala.inline
-    def onSubmit(value: SyntheticEvent[EventTarget with HTMLBaseElement, Event] => Unit): this.type = set("onSubmit", js.Any.fromFunction1(value))
+    def onSubmit(value: SyntheticEvent[EventTarget & HTMLBaseElement, Event] => Unit): this.type = set("onSubmit", js.Any.fromFunction1(value))
     
     @scala.inline
     def onSuspend(value: SyntheticEvent[Event, HTMLBaseElement] => Unit): this.type = set("onSuspend", js.Any.fromFunction1(value))

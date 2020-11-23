@@ -6,7 +6,6 @@ import typings.vue.vueMod.Vue
 import typings.vue.vueMod.VueConstructor
 import typings.vueScrollto.vueScrolltoBooleans.`false`
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 /* static members */
@@ -35,37 +34,37 @@ object mod {
   trait Options extends js.Object {
     
     // Indicates if user can cancel the scroll or not. Default: true
-    var cancelable: js.UndefOr[Boolean] = js.native
+    var cancelable: scala.Unit | Boolean = js.native
     
     // The container that has to be scrolled. Default: body
-    var container: js.UndefOr[String | Element] = js.native
+    var container: scala.Unit | String | Element = js.native
     
     // The duration (in milliseconds) of the scrolling animation. Default: 500
-    var duration: js.UndefOr[Double] = js.native
+    var duration: scala.Unit | Double = js.native
     
     // The easing to be used when animating. Default: ease
-    var easing: js.UndefOr[String] = js.native
+    var easing: scala.Unit | String = js.native
     
     // The element you want to scroll to.
-    var el: js.UndefOr[String | Element] = js.native
+    var el: scala.Unit | String | Element = js.native
     
-    var element: js.UndefOr[String | Element] = js.native
+    var element: scala.Unit | String | Element = js.native
     
     // The offset that should be applied when scrolling. Default: 0
-    var offset: js.UndefOr[Double] = js.native
+    var offset: scala.Unit | Double = js.native
     
     // A callback function that should be called when scrolling has been aborted by the user (user scrolled, clicked
     // etc.). Default: noop
-    var onCancel: js.UndefOr[js.Function0[Unit] | `false`] = js.native
+    var onCancel: scala.Unit | js.Function0[Unit] | `false` = js.native
     
     // A callback function that should be called when scrolling has ended. Default: noop
-    var onDone: js.UndefOr[js.Function0[Unit] | `false`] = js.native
+    var onDone: scala.Unit | js.Function0[Unit] | `false` = js.native
     
     // Whether or not we want scrolling on the x axis. Default: true
-    var x: js.UndefOr[Boolean] = js.native
+    var x: scala.Unit | Boolean = js.native
     
     // Whether or not we want scrolling on the y axis. Default: true
-    var y: js.UndefOr[Boolean] = js.native
+    var y: scala.Unit | Boolean = js.native
   }
   object Options {
     
@@ -82,7 +81,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -94,43 +93,43 @@ object mod {
       def setCancelable(value: Boolean): Self = this.set("cancelable", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteCancelable: Self = this.set("cancelable", js.undefined)
+      def deleteCancelable: Self = this.set("cancelable", ())
       
       @scala.inline
       def setContainer(value: String | Element): Self = this.set("container", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteContainer: Self = this.set("container", js.undefined)
+      def deleteContainer: Self = this.set("container", ())
       
       @scala.inline
       def setDuration(value: Double): Self = this.set("duration", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDuration: Self = this.set("duration", js.undefined)
+      def deleteDuration: Self = this.set("duration", ())
       
       @scala.inline
       def setEasing(value: String): Self = this.set("easing", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteEasing: Self = this.set("easing", js.undefined)
+      def deleteEasing: Self = this.set("easing", ())
       
       @scala.inline
       def setEl(value: String | Element): Self = this.set("el", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteEl: Self = this.set("el", js.undefined)
+      def deleteEl: Self = this.set("el", ())
       
       @scala.inline
       def setElement(value: String | Element): Self = this.set("element", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteElement: Self = this.set("element", js.undefined)
+      def deleteElement: Self = this.set("element", ())
       
       @scala.inline
       def setOffset(value: Double): Self = this.set("offset", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteOffset: Self = this.set("offset", js.undefined)
+      def deleteOffset: Self = this.set("offset", ())
       
       @scala.inline
       def setOnCancelFunction0(value: () => Unit): Self = this.set("onCancel", js.Any.fromFunction0(value))
@@ -139,7 +138,7 @@ object mod {
       def setOnCancel(value: js.Function0[Unit] | `false`): Self = this.set("onCancel", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteOnCancel: Self = this.set("onCancel", js.undefined)
+      def deleteOnCancel: Self = this.set("onCancel", ())
       
       @scala.inline
       def setOnDoneFunction0(value: () => Unit): Self = this.set("onDone", js.Any.fromFunction0(value))
@@ -148,19 +147,19 @@ object mod {
       def setOnDone(value: js.Function0[Unit] | `false`): Self = this.set("onDone", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteOnDone: Self = this.set("onDone", js.undefined)
+      def deleteOnDone: Self = this.set("onDone", ())
       
       @scala.inline
       def setX(value: Boolean): Self = this.set("x", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteX: Self = this.set("x", js.undefined)
+      def deleteX: Self = this.set("x", ())
       
       @scala.inline
       def setY(value: Boolean): Self = this.set("y", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteY: Self = this.set("y", js.undefined)
+      def deleteY: Self = this.set("y", ())
     }
   }
   

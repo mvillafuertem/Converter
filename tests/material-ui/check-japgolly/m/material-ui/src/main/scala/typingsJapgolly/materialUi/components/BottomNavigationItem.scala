@@ -3,7 +3,6 @@ package typingsJapgolly.materialUi.components
 import typingsJapgolly.StBuildingComponent
 import typingsJapgolly.materialUi.MaterialUI.BottomNavigation.BottomNavigationItemProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object BottomNavigationItem {

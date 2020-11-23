@@ -1,15 +1,14 @@
 package typingsJapgolly.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait LabelHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var form: js.UndefOr[String] = js.native
+  var form: scala.Unit | String = js.native
   
-  var htmlFor: js.UndefOr[String] = js.native
+  var htmlFor: scala.Unit | String = js.native
 }
 object LabelHTMLAttributes {
   
@@ -20,13 +19,13 @@ object LabelHTMLAttributes {
   }
   
   @scala.inline
-  implicit class LabelHTMLAttributesOps[Self <: LabelHTMLAttributes[_], T] (val x: Self with LabelHTMLAttributes[T]) extends AnyVal {
+  implicit class LabelHTMLAttributesOps[Self <: LabelHTMLAttributes[?], T] (val x: Self & LabelHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -38,12 +37,12 @@ object LabelHTMLAttributes {
     def setForm(value: String): Self = this.set("form", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteForm: Self = this.set("form", js.undefined)
+    def deleteForm: Self = this.set("form", ())
     
     @scala.inline
     def setHtmlFor(value: String): Self = this.set("htmlFor", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteHtmlFor: Self = this.set("htmlFor", js.undefined)
+    def deleteHtmlFor: Self = this.set("htmlFor", ())
   }
 }

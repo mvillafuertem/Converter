@@ -3,7 +3,6 @@ package typingsJapgolly.react.components
 import typingsJapgolly.StBuildingComponent
 import typingsJapgolly.react.mod.SuspenseProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object Suspense {

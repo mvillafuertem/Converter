@@ -4,7 +4,6 @@ import org.scalablytyped.runtime.StringDictionary
 import typingsJapgolly.react.mod.Component
 import typingsJapgolly.react.mod.Props
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -18,7 +17,7 @@ object mod {
   /* property */ StringDictionary[js.Any] {
     
     /** Value for searching */
-    var value: js.UndefOr[TValue] = js.native
+    var value: scala.Unit | TValue = js.native
   }
   object Option {
     
@@ -29,13 +28,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class OptionOps[Self <: Option[_], TValue] (val x: Self with Option[TValue]) extends AnyVal {
+    implicit class OptionOps[Self <: Option[?], TValue] (val x: Self & Option[TValue]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -47,7 +46,7 @@ object mod {
       def setValue(value: TValue): Self = this.set("value", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteValue: Self = this.set("value", js.undefined)
+      def deleteValue: Self = this.set("value", ())
     }
   }
   
@@ -67,7 +66,7 @@ object mod {
       * text to display when `allowCreate` is true.
       * @default 'Add "{label}"?'
       */
-    var addLabelText: js.UndefOr[String] = js.native
+    var addLabelText: scala.Unit | String = js.native
   }
   object ReactSelectProps {
     
@@ -78,13 +77,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class ReactSelectPropsOps[Self <: ReactSelectProps[_], TValue] (val x: Self with ReactSelectProps[TValue]) extends AnyVal {
+    implicit class ReactSelectPropsOps[Self <: ReactSelectProps[?], TValue] (val x: Self & ReactSelectProps[TValue]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -96,7 +95,7 @@ object mod {
       def setAddLabelText(value: String): Self = this.set("addLabelText", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAddLabelText: Self = this.set("addLabelText", js.undefined)
+      def deleteAddLabelText: Self = this.set("addLabelText", ())
     }
   }
   

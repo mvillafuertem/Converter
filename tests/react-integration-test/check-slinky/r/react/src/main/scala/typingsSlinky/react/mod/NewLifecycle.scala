@@ -1,7 +1,6 @@
 package typingsSlinky.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 // This should be "infer SS" but can't use it yet
@@ -13,9 +12,7 @@ trait NewLifecycle[P, S, SS] extends js.Object {
     *
     * The snapshot is only present if getSnapshotBeforeUpdate is present and returns non-null.
     */
-  var componentDidUpdate: js.UndefOr[
-    js.Function3[/* prevProps */ P, /* prevState */ S, /* snapshot */ js.UndefOr[SS], Unit]
-  ] = js.native
+  var componentDidUpdate: scala.Unit | (js.Function3[/* prevProps */ P, /* prevState */ S, /* snapshot */ scala.Unit | SS, Unit]) = js.native
   
   /**
     * Runs before React applies the result of `render` to the document, and
@@ -25,7 +22,7 @@ trait NewLifecycle[P, S, SS] extends js.Object {
     * Note: the presence of getSnapshotBeforeUpdate prevents any of the deprecated
     * lifecycle events from running.
     */
-  var getSnapshotBeforeUpdate: js.UndefOr[js.Function2[/* prevProps */ P, /* prevState */ S, SS | Null]] = js.native
+  var getSnapshotBeforeUpdate: scala.Unit | (js.Function2[/* prevProps */ P, /* prevState */ S, SS | Null]) = js.native
 }
 object NewLifecycle {
   
@@ -36,13 +33,13 @@ object NewLifecycle {
   }
   
   @scala.inline
-  implicit class NewLifecycleOps[Self <: NewLifecycle[_, _, _], P, S, SS] (val x: Self with (NewLifecycle[P, S, SS])) extends AnyVal {
+  implicit class NewLifecycleOps[Self <: NewLifecycle[?, ?, ?], P, S, SS] (val x: Self & (NewLifecycle[P, S, SS])) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -51,15 +48,15 @@ object NewLifecycle {
     }
     
     @scala.inline
-    def setComponentDidUpdate(value: (/* prevProps */ P, /* prevState */ S, /* snapshot */ js.UndefOr[SS]) => Unit): Self = this.set("componentDidUpdate", js.Any.fromFunction3(value))
+    def setComponentDidUpdate(value: (/* prevProps */ P, /* prevState */ S, /* snapshot */ scala.Unit | SS) => Unit): Self = this.set("componentDidUpdate", js.Any.fromFunction3(value))
     
     @scala.inline
-    def deleteComponentDidUpdate: Self = this.set("componentDidUpdate", js.undefined)
+    def deleteComponentDidUpdate: Self = this.set("componentDidUpdate", ())
     
     @scala.inline
     def setGetSnapshotBeforeUpdate(value: (/* prevProps */ P, /* prevState */ S) => SS | Null): Self = this.set("getSnapshotBeforeUpdate", js.Any.fromFunction2(value))
     
     @scala.inline
-    def deleteGetSnapshotBeforeUpdate: Self = this.set("getSnapshotBeforeUpdate", js.undefined)
+    def deleteGetSnapshotBeforeUpdate: Self = this.set("getSnapshotBeforeUpdate", ())
   }
 }

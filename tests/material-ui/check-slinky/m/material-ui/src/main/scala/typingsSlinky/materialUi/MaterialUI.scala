@@ -2,7 +2,6 @@ package typingsSlinky.materialUi
 
 import slinky.core.ReactComponentClass
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object MaterialUI {
@@ -14,7 +13,7 @@ object MaterialUI {
       
       var children: Double = js.native
       
-      var className: js.UndefOr[String] = js.native
+      var className: scala.Unit | String = js.native
     }
     object BottomNavigationItemProps {
       
@@ -31,7 +30,7 @@ object MaterialUI {
         def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
         
         @scala.inline
-        def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+        def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
         
         @scala.inline
         def set(key: String, value: js.Any): Self = {
@@ -46,7 +45,7 @@ object MaterialUI {
         def setClassName(value: String): Self = this.set("className", value.asInstanceOf[js.Any])
         
         @scala.inline
-        def deleteClassName: Self = this.set("className", js.undefined)
+        def deleteClassName: Self = this.set("className", ())
       }
     }
     
@@ -58,7 +57,7 @@ object MaterialUI {
     @js.native
     trait MuiTheme extends js.Object {
       
-      var spacing: js.UndefOr[js.Any] = js.native
+      var spacing: scala.Unit | js.Any = js.native
     }
     object MuiTheme {
       
@@ -75,7 +74,7 @@ object MaterialUI {
         def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
         
         @scala.inline
-        def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+        def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
         
         @scala.inline
         def set(key: String, value: js.Any): Self = {
@@ -87,7 +86,7 @@ object MaterialUI {
         def setSpacing(value: js.Any): Self = this.set("spacing", value.asInstanceOf[js.Any])
         
         @scala.inline
-        def deleteSpacing: Self = this.set("spacing", js.undefined)
+        def deleteSpacing: Self = this.set("spacing", ())
       }
     }
   }

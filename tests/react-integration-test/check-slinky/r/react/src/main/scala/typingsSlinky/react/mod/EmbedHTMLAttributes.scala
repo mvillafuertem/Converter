@@ -1,19 +1,18 @@
 package typingsSlinky.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait EmbedHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var height: js.UndefOr[Double | String] = js.native
+  var height: scala.Unit | Double | String = js.native
   
-  var src: js.UndefOr[String] = js.native
+  var src: scala.Unit | String = js.native
   
-  var `type`: js.UndefOr[String] = js.native
+  var `type`: scala.Unit | String = js.native
   
-  var width: js.UndefOr[Double | String] = js.native
+  var width: scala.Unit | Double | String = js.native
 }
 object EmbedHTMLAttributes {
   
@@ -24,13 +23,13 @@ object EmbedHTMLAttributes {
   }
   
   @scala.inline
-  implicit class EmbedHTMLAttributesOps[Self <: EmbedHTMLAttributes[_], T] (val x: Self with EmbedHTMLAttributes[T]) extends AnyVal {
+  implicit class EmbedHTMLAttributesOps[Self <: EmbedHTMLAttributes[?], T] (val x: Self & EmbedHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -42,24 +41,24 @@ object EmbedHTMLAttributes {
     def setHeight(value: Double | String): Self = this.set("height", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteHeight: Self = this.set("height", js.undefined)
+    def deleteHeight: Self = this.set("height", ())
     
     @scala.inline
     def setSrc(value: String): Self = this.set("src", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteSrc: Self = this.set("src", js.undefined)
+    def deleteSrc: Self = this.set("src", ())
     
     @scala.inline
     def setType(value: String): Self = this.set("type", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteType: Self = this.set("type", js.undefined)
+    def deleteType: Self = this.set("type", ())
     
     @scala.inline
     def setWidth(value: Double | String): Self = this.set("width", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteWidth: Self = this.set("width", js.undefined)
+    def deleteWidth: Self = this.set("width", ())
   }
 }

@@ -3,7 +3,6 @@ package typings.swiz
 import typings.swiz.mod.struct.IField
 import typings.swiz.mod.struct.IObj
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -28,7 +27,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -44,11 +43,11 @@ object mod {
   @js.native
   trait ISwizOptions extends js.Object {
     
-    var `for`: js.UndefOr[String] = js.native
+    var `for`: scala.Unit | String = js.native
     
-    var stripNulls: js.UndefOr[Boolean] = js.native
+    var stripNulls: scala.Unit | Boolean = js.native
     
-    var stripSerializerType: js.UndefOr[Boolean] = js.native
+    var stripSerializerType: scala.Unit | Boolean = js.native
   }
   object ISwizOptions {
     
@@ -65,7 +64,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -77,19 +76,19 @@ object mod {
       def setFor(value: String): Self = this.set("for", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteFor: Self = this.set("for", js.undefined)
+      def deleteFor: Self = this.set("for", ())
       
       @scala.inline
       def setStripNulls(value: Boolean): Self = this.set("stripNulls", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteStripNulls: Self = this.set("stripNulls", js.undefined)
+      def deleteStripNulls: Self = this.set("stripNulls", ())
       
       @scala.inline
       def setStripSerializerType(value: Boolean): Self = this.set("stripSerializerType", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteStripSerializerType: Self = this.set("stripSerializerType", js.undefined)
+      def deleteStripSerializerType: Self = this.set("stripSerializerType", ())
     }
   }
   
@@ -142,7 +141,7 @@ object mod {
     
     def serializeForPagination(
       mode: SERIALIZATION,
-      array: js.Array[_],
+      array: js.Array[?],
       metadata: js.Any,
       callback: js.Function2[/* err */ js.Any, /* result */ String, Unit]
     ): Unit = js.native

@@ -2,13 +2,12 @@ package typingsSlinky.semanticUiReact.genericMod
 
 import slinky.core.facade.ReactElement
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait StrictHtmlSpanProps extends js.Object {
   
-  var children: js.UndefOr[ReactElement] = js.native
+  var children: scala.Unit | ReactElement = js.native
 }
 object StrictHtmlSpanProps {
   
@@ -25,7 +24,7 @@ object StrictHtmlSpanProps {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -40,6 +39,6 @@ object StrictHtmlSpanProps {
     def setChildren(value: ReactElement): Self = this.set("children", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteChildren: Self = this.set("children", js.undefined)
+    def deleteChildren: Self = this.set("children", ())
   }
 }

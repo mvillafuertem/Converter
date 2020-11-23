@@ -11,7 +11,6 @@ import typingsJapgolly.reactDropzone.mod.DropzoneProps
 import typingsJapgolly.reactDropzone.mod.DropzoneRef
 import typingsJapgolly.reactDropzone.mod.DropzoneState
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object ReactDropzone {
@@ -39,7 +38,7 @@ object ReactDropzone {
     
     @scala.inline
     def getFilesFromEvent(
-      value: /* event */ DropEvent => /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify Promise<Array<File | DataTransferItem>> */ _
+      value: /* event */ DropEvent => /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify Promise<Array<File | DataTransferItem>> */ ?
     ): this.type = set("getFilesFromEvent", js.Any.fromFunction1(value))
     
     @scala.inline
@@ -90,7 +89,7 @@ object ReactDropzone {
     def preventDropOnDocument(value: Boolean): this.type = set("preventDropOnDocument", value.asInstanceOf[js.Any])
   }
   
-  def withProps(p: DropzoneProps with RefAttributes[DropzoneRef]): Builder = new Builder(js.Array(this.component, p.asInstanceOf[js.Any]))
+  def withProps(p: DropzoneProps & RefAttributes[DropzoneRef]): Builder = new Builder(js.Array(this.component, p.asInstanceOf[js.Any]))
   
   implicit def make(companion: ReactDropzone.type): Builder = new Builder(js.Array(this.component, js.Dictionary.empty))()
 }

@@ -1,7 +1,6 @@
 package typingsSlinky.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 //
@@ -67,13 +66,13 @@ object BaseSyntheticEvent {
   }
   
   @scala.inline
-  implicit class BaseSyntheticEventOps[Self <: slinky.core.SyntheticEvent[_, _], E, C, T] (val x: Self with (slinky.core.SyntheticEvent[C, E])) extends AnyVal {
+  implicit class BaseSyntheticEventOps[Self <: slinky.core.SyntheticEvent[?, ?], E, C, T] (val x: Self & (slinky.core.SyntheticEvent[C, E])) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {

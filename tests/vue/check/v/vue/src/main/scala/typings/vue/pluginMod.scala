@@ -4,7 +4,6 @@ import org.scalablytyped.runtime.StringDictionary
 import typings.vue.vueMod.Vue
 import typings.vue.vueMod.VueConstructor
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object pluginMod {
@@ -19,5 +18,5 @@ object pluginMod {
     var install_Original: PluginFunction[T] = js.native
   }
   
-  type PluginFunction[T] = js.Function2[/* Vue */ VueConstructor[Vue], /* options */ js.UndefOr[T], Unit]
+  type PluginFunction[T] = js.Function2[/* Vue */ VueConstructor[Vue], /* options */ scala.Unit | T, Unit]
 }

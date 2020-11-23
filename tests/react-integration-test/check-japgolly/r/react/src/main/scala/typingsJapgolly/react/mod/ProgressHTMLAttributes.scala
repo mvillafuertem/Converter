@@ -1,15 +1,14 @@
 package typingsJapgolly.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait ProgressHTMLAttributes[T] extends HTMLAttributes[T] {
   
-  var max: js.UndefOr[Double | String] = js.native
+  var max: scala.Unit | Double | String = js.native
   
-  var value: js.UndefOr[String | js.Array[String] | Double] = js.native
+  var value: scala.Unit | String | js.Array[String] | Double = js.native
 }
 object ProgressHTMLAttributes {
   
@@ -20,13 +19,13 @@ object ProgressHTMLAttributes {
   }
   
   @scala.inline
-  implicit class ProgressHTMLAttributesOps[Self <: ProgressHTMLAttributes[_], T] (val x: Self with ProgressHTMLAttributes[T]) extends AnyVal {
+  implicit class ProgressHTMLAttributesOps[Self <: ProgressHTMLAttributes[?], T] (val x: Self & ProgressHTMLAttributes[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -38,7 +37,7 @@ object ProgressHTMLAttributes {
     def setMax(value: Double | String): Self = this.set("max", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteMax: Self = this.set("max", js.undefined)
+    def deleteMax: Self = this.set("max", ())
     
     @scala.inline
     def setValueVarargs(value: String*): Self = this.set("value", js.Array(value :_*))
@@ -47,6 +46,6 @@ object ProgressHTMLAttributes {
     def setValue(value: String | js.Array[String] | Double): Self = this.set("value", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteValue: Self = this.set("value", js.undefined)
+    def deleteValue: Self = this.set("value", ())
   }
 }

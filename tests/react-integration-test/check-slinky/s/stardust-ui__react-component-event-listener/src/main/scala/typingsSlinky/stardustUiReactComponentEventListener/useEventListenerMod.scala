@@ -2,7 +2,6 @@ package typingsSlinky.stardustUiReactComponentEventListener
 
 import typingsSlinky.stardustUiReactComponentEventListener.typesMod.EventListenerOptions
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object useEventListenerMod {

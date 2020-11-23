@@ -2,7 +2,6 @@ package typings.electron
 
 import typings.electron.electronStrings.`accessibility-support-changed`
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object Electron {
@@ -35,7 +34,7 @@ object Electron {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -55,17 +54,17 @@ object Electron {
   trait Event
     extends typings.std.Event {
     
-    var altKey: js.UndefOr[Boolean] = js.native
+    var altKey: scala.Unit | Boolean = js.native
     
-    var ctrlKey: js.UndefOr[Boolean] = js.native
+    var ctrlKey: scala.Unit | Boolean = js.native
     
-    var metaKey: js.UndefOr[Boolean] = js.native
+    var metaKey: scala.Unit | Boolean = js.native
     
     def preventDefault(): Unit = js.native
     
     var returnValue: js.Any = js.native
     
-    var shiftKey: js.UndefOr[Boolean] = js.native
+    var shiftKey: scala.Unit | Boolean = js.native
   }
   object Event {
     
@@ -82,7 +81,7 @@ object Electron {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -100,25 +99,25 @@ object Electron {
       def setAltKey(value: Boolean): Self = this.set("altKey", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAltKey: Self = this.set("altKey", js.undefined)
+      def deleteAltKey: Self = this.set("altKey", ())
       
       @scala.inline
       def setCtrlKey(value: Boolean): Self = this.set("ctrlKey", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteCtrlKey: Self = this.set("ctrlKey", js.undefined)
+      def deleteCtrlKey: Self = this.set("ctrlKey", ())
       
       @scala.inline
       def setMetaKey(value: Boolean): Self = this.set("metaKey", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteMetaKey: Self = this.set("metaKey", js.undefined)
+      def deleteMetaKey: Self = this.set("metaKey", ())
       
       @scala.inline
       def setShiftKey(value: Boolean): Self = this.set("shiftKey", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteShiftKey: Self = this.set("shiftKey", js.undefined)
+      def deleteShiftKey: Self = this.set("shiftKey", ())
     }
   }
   
@@ -142,7 +141,7 @@ object Electron {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -175,7 +174,7 @@ object Electron {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {

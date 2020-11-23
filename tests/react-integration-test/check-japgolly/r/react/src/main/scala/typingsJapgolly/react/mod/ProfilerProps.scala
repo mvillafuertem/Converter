@@ -7,13 +7,12 @@ import japgolly.scalajs.react.vdom.VdomNode
 import typingsJapgolly.react.reactStrings.mount
 import typingsJapgolly.react.reactStrings.update
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait ProfilerProps extends js.Object {
   
-  var children: js.UndefOr[Node] = js.native
+  var children: scala.Unit | Node = js.native
   
   var id: String = js.native
   
@@ -37,7 +36,7 @@ object ProfilerProps {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -60,6 +59,6 @@ object ProfilerProps {
     def setChildren(value: VdomNode): Self = this.set("children", value.rawNode.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteChildren: Self = this.set("children", js.undefined)
+    def deleteChildren: Self = this.set("children", ())
   }
 }

@@ -2,7 +2,6 @@ package typingsSlinky.reactTransitionGroup
 
 import slinky.core.facade.ReactElement
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -10,7 +9,7 @@ object anon {
   @js.native
   trait ChildFactory extends js.Object {
     
-    var childFactory: js.UndefOr[js.Function1[/* child */ ReactElement, ReactElement]] = js.native
+    var childFactory: scala.Unit | (js.Function1[/* child */ ReactElement, ReactElement]) = js.native
   }
   object ChildFactory {
     
@@ -27,7 +26,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -39,7 +38,7 @@ object anon {
       def setChildFactory(value: /* child */ ReactElement => ReactElement): Self = this.set("childFactory", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteChildFactory: Self = this.set("childFactory", js.undefined)
+      def deleteChildFactory: Self = this.set("childFactory", ())
     }
   }
 }

@@ -11,7 +11,6 @@ import typings.std.Element
 import typings.std.Partial
 import typings.std.SVGElement
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -19,9 +18,9 @@ object mod {
   @js.native
   trait AllHTMLAttributes[T] extends HTMLAttributes[T] {
     
-    var accept: js.UndefOr[String] = js.native
+    var accept: scala.Unit | String = js.native
     
-    var acceptCharset: js.UndefOr[String] = js.native
+    var acceptCharset: scala.Unit | String = js.native
   }
   object AllHTMLAttributes {
     
@@ -32,13 +31,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class AllHTMLAttributesOps[Self <: AllHTMLAttributes[_], T] (val x: Self with AllHTMLAttributes[T]) extends AnyVal {
+    implicit class AllHTMLAttributesOps[Self <: AllHTMLAttributes[?], T] (val x: Self & AllHTMLAttributes[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -50,20 +49,20 @@ object mod {
       def setAccept(value: String): Self = this.set("accept", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAccept: Self = this.set("accept", js.undefined)
+      def deleteAccept: Self = this.set("accept", ())
       
       @scala.inline
       def setAcceptCharset(value: String): Self = this.set("acceptCharset", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAcceptCharset: Self = this.set("acceptCharset", js.undefined)
+      def deleteAcceptCharset: Self = this.set("acceptCharset", ())
     }
   }
   
   @js.native
   trait Attributes extends js.Object {
     
-    var key: js.UndefOr[Key] = js.native
+    var key: scala.Unit | Key = js.native
   }
   object Attributes {
     
@@ -80,7 +79,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -92,14 +91,14 @@ object mod {
       def setKey(value: Key): Self = this.set("key", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteKey: Self = this.set("key", js.undefined)
+      def deleteKey: Self = this.set("key", ())
     }
   }
   
   @js.native
   trait ClassAttributes[T] extends Attributes {
     
-    var ref: js.UndefOr[Ref[T]] = js.native
+    var ref: scala.Unit | Ref[T] = js.native
   }
   object ClassAttributes {
     
@@ -110,13 +109,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class ClassAttributesOps[Self <: ClassAttributes[_], T] (val x: Self with ClassAttributes[T]) extends AnyVal {
+    implicit class ClassAttributesOps[Self <: ClassAttributes[?], T] (val x: Self & ClassAttributes[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -131,7 +130,7 @@ object mod {
       def setRef(value: Ref[T]): Self = this.set("ref", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteRef: Self = this.set("ref", js.undefined)
+      def deleteRef: Self = this.set("ref", ())
     }
   }
   
@@ -144,9 +143,9 @@ object mod {
        with Instantiable1[/* props */ P, Component[P, ComponentState]]
        with Instantiable2[/* props */ P, /* context */ js.Any, Component[P, ComponentState]] {
     
-    var defaultProps: js.UndefOr[Partial[P]] = js.native
+    var defaultProps: scala.Unit | Partial[P] = js.native
     
-    var displayName: js.UndefOr[String] = js.native
+    var displayName: scala.Unit | String = js.native
   }
   
   /* Rewritten from type alias, can be one of: 
@@ -158,9 +157,9 @@ object mod {
   @js.native
   trait DOMAttributes[T] extends js.Object {
     
-    var children: js.UndefOr[ReactNode] = js.native
+    var children: scala.Unit | ReactNode = js.native
     
-    var dangerouslySetInnerHTML: js.UndefOr[Html] = js.native
+    var dangerouslySetInnerHTML: scala.Unit | Html = js.native
   }
   object DOMAttributes {
     
@@ -171,13 +170,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class DOMAttributesOps[Self <: DOMAttributes[_], T] (val x: Self with DOMAttributes[T]) extends AnyVal {
+    implicit class DOMAttributesOps[Self <: DOMAttributes[?], T] (val x: Self & DOMAttributes[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -189,13 +188,13 @@ object mod {
       def setChildren(value: ReactNode): Self = this.set("children", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteChildren: Self = this.set("children", js.undefined)
+      def deleteChildren: Self = this.set("children", ())
       
       @scala.inline
       def setDangerouslySetInnerHTML(value: Html): Self = this.set("dangerouslySetInnerHTML", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDangerouslySetInnerHTML: Self = this.set("dangerouslySetInnerHTML", js.undefined)
+      def deleteDangerouslySetInnerHTML: Self = this.set("dangerouslySetInnerHTML", ())
     }
   }
   
@@ -218,13 +217,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class DOMElementOps[Self <: DOMElement[_, _], P /* <: HTMLAttributes[T] | SVGAttributes[T] */, T /* <: Element */] (val x: Self with (DOMElement[P, T])) extends AnyVal {
+    implicit class DOMElementOps[Self <: DOMElement[?, ?], P /* <: HTMLAttributes[T] | SVGAttributes[T] */, T /* <: Element */] (val x: Self & (DOMElement[P, T])) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -246,7 +245,7 @@ object mod {
   @js.native
   trait HTMLAttributes[T] extends DOMAttributes[T] {
     
-    var defaultChecked: js.UndefOr[Boolean] = js.native
+    var defaultChecked: scala.Unit | Boolean = js.native
   }
   object HTMLAttributes {
     
@@ -257,13 +256,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class HTMLAttributesOps[Self <: HTMLAttributes[_], T] (val x: Self with HTMLAttributes[T]) extends AnyVal {
+    implicit class HTMLAttributesOps[Self <: HTMLAttributes[?], T] (val x: Self & HTMLAttributes[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -275,7 +274,7 @@ object mod {
       def setDefaultChecked(value: Boolean): Self = this.set("defaultChecked", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDefaultChecked: Self = this.set("defaultChecked", js.undefined)
+      def deleteDefaultChecked: Self = this.set("defaultChecked", ())
     }
   }
   
@@ -286,12 +285,12 @@ object mod {
     
     var props: js.Any = js.native
     
-    var `type`: String | ComponentClass[_] = js.native
+    var `type`: String | ComponentClass[?] = js.native
   }
   object ReactElement {
     
     @scala.inline
-    def apply(props: js.Any, `type`: String | ComponentClass[_]): ReactElement = {
+    def apply(props: js.Any, `type`: String | ComponentClass[?]): ReactElement = {
       val __obj = js.Dynamic.literal(props = props.asInstanceOf[js.Any])
       __obj.updateDynamic("type")(`type`.asInstanceOf[js.Any])
       __obj.asInstanceOf[ReactElement]
@@ -304,7 +303,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -316,7 +315,7 @@ object mod {
       def setProps(value: js.Any): Self = this.set("props", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def setType(value: String | ComponentClass[_]): Self = this.set("type", value.asInstanceOf[js.Any])
+      def setType(value: String | ComponentClass[?]): Self = this.set("type", value.asInstanceOf[js.Any])
       
       @scala.inline
       def setKey(value: Key): Self = this.set("key", value.asInstanceOf[js.Any])
@@ -350,7 +349,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -392,7 +391,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -410,11 +409,11 @@ object mod {
     
     // Attributes which also defined in HTMLAttributes
     // See comment in SVGDOMPropertyConfig.js
-    var className: js.UndefOr[String] = js.native
+    var className: scala.Unit | String = js.native
     
-    var color: js.UndefOr[String] = js.native
+    var color: scala.Unit | String = js.native
     
-    var height: js.UndefOr[Double | String] = js.native
+    var height: scala.Unit | Double | String = js.native
   }
   object SVGAttributes {
     
@@ -425,13 +424,13 @@ object mod {
     }
     
     @scala.inline
-    implicit class SVGAttributesOps[Self <: SVGAttributes[_], T] (val x: Self with SVGAttributes[T]) extends AnyVal {
+    implicit class SVGAttributesOps[Self <: SVGAttributes[?], T] (val x: Self & SVGAttributes[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -443,52 +442,52 @@ object mod {
       def setClassName(value: String): Self = this.set("className", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteClassName: Self = this.set("className", js.undefined)
+      def deleteClassName: Self = this.set("className", ())
       
       @scala.inline
       def setColor(value: String): Self = this.set("color", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteColor: Self = this.set("color", js.undefined)
+      def deleteColor: Self = this.set("color", ())
       
       @scala.inline
       def setHeight(value: Double | String): Self = this.set("height", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteHeight: Self = this.set("height", js.undefined)
+      def deleteHeight: Self = this.set("height", ())
     }
   }
   
   @js.native
   trait SVGFactory extends DOMFactory[SVGAttributes[SVGElement], SVGElement] {
     
-    def apply(props: ClassAttributes[SVGElement] with SVGAttributes[SVGElement], children: ReactNode*): ReactSVGElement = js.native
-    def apply(props: js.UndefOr[scala.Nothing], children: ReactNode*): ReactSVGElement = js.native
+    def apply(props: ClassAttributes[SVGElement] & SVGAttributes[SVGElement], children: ReactNode*): ReactSVGElement = js.native
     def apply(props: Null, children: ReactNode*): ReactSVGElement = js.native
+    def apply(props: Unit, children: ReactNode*): ReactSVGElement = js.native
   }
   
   @js.native
   trait StatelessComponent[P] extends ComponentType[P] {
     
-    def apply(props: P with Children): ReactElement | Null = js.native
-    def apply(props: P with Children, context: js.Any): ReactElement | Null = js.native
+    def apply(props: P & Children): ReactElement | Null = js.native
+    def apply(props: P & Children, context: js.Any): ReactElement | Null = js.native
     
-    var defaultProps: js.UndefOr[Partial[P]] = js.native
+    var defaultProps: scala.Unit | Partial[P] = js.native
     
-    var displayName: js.UndefOr[String] = js.native
+    var displayName: scala.Unit | String = js.native
   }
   
   type ComponentState = js.Object
   
   type DOMFactory[P /* <: DOMAttributes[T] */, T /* <: Element */] = js.Function2[
-    /* props */ js.UndefOr[(ClassAttributes[T] with P) | Null], 
+    /* props */ scala.Unit | (ClassAttributes[T] & P) | Null, 
     /* repeated */ ReactNode, 
     DOMElement[P, T]
   ]
   
   type Key = String | Double
   
-  type ReactNode = js.UndefOr[String | Double | Boolean]
+  type ReactNode = scala.Unit | String | Double | Boolean
   
   type Ref[T] = String | (js.Function1[/* instance */ T | Null, js.Any])
   

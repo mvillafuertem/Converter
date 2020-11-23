@@ -14,7 +14,6 @@ import typingsJapgolly.semanticUiReact.accordionContentMod.AccordionContentProps
 import typingsJapgolly.semanticUiReact.accordionTitleMod.AccordionTitleProps
 import typingsJapgolly.semanticUiReact.genericMod.SemanticShorthandItem
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object accordionPanelMod {
@@ -36,13 +35,13 @@ object accordionPanelMod {
   trait StrictAccordionPanelProps extends js.Object {
     
     /** Whether or not the title is in the open state. */
-    var active: js.UndefOr[Boolean] = js.native
+    var active: scala.Unit | Boolean = js.native
     
     /** A shorthand for Accordion.Content. */
-    var content: js.UndefOr[SemanticShorthandItem[AccordionContentProps]] = js.native
+    var content: scala.Unit | SemanticShorthandItem[AccordionContentProps] = js.native
     
     /** A panel index. */
-    var index: js.UndefOr[Double | String] = js.native
+    var index: scala.Unit | Double | String = js.native
     
     /**
       * Called when a panel title is clicked.
@@ -50,16 +49,14 @@ object accordionPanelMod {
       * @param {SyntheticEvent} event - React's original SyntheticEvent.
       * @param {AccordionTitleProps} data - All item props.
       */
-    var onTitleClick: js.UndefOr[
-        js.Function2[
-          /* event */ ReactMouseEventFrom[HTMLDivElement], 
-          /* data */ AccordionTitleProps, 
-          Unit
-        ]
-      ] = js.native
+    var onTitleClick: scala.Unit | (js.Function2[
+        /* event */ ReactMouseEventFrom[HTMLDivElement], 
+        /* data */ AccordionTitleProps, 
+        Unit
+      ]) = js.native
     
     /** A shorthand for Accordion.Title. */
-    var title: js.UndefOr[SemanticShorthandItem[AccordionTitleProps]] = js.native
+    var title: scala.Unit | SemanticShorthandItem[AccordionTitleProps] = js.native
   }
   object StrictAccordionPanelProps {
     
@@ -76,7 +73,7 @@ object accordionPanelMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -88,27 +85,27 @@ object accordionPanelMod {
       def setActive(value: Boolean): Self = this.set("active", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteActive: Self = this.set("active", js.undefined)
+      def deleteActive: Self = this.set("active", ())
       
       @scala.inline
       def setContentVdomElement(value: VdomElement): Self = this.set("content", value.rawElement.asInstanceOf[js.Any])
       
       @scala.inline
       def setContentFunction3(
-        value: (/* component */ ReactType[AccordionContentProps], AccordionContentProps, /* children */ js.UndefOr[Node | ReactNodeArray]) => Element | Null
+        value: (/* component */ ReactType[AccordionContentProps], AccordionContentProps, /* children */ scala.Unit | Node | ReactNodeArray) => Element | Null
       ): Self = this.set("content", js.Any.fromFunction3(value))
       
       @scala.inline
       def setContent(value: SemanticShorthandItem[AccordionContentProps]): Self = this.set("content", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteContent: Self = this.set("content", js.undefined)
+      def deleteContent: Self = this.set("content", ())
       
       @scala.inline
       def setIndex(value: Double | String): Self = this.set("index", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteIndex: Self = this.set("index", js.undefined)
+      def deleteIndex: Self = this.set("index", ())
       
       @scala.inline
       def setOnTitleClick(
@@ -116,21 +113,21 @@ object accordionPanelMod {
       ): Self = this.set("onTitleClick", js.Any.fromFunction2((t0: /* event */ ReactMouseEventFrom[HTMLDivElement], t1: /* data */ AccordionTitleProps) => (value(t0, t1)).runNow()))
       
       @scala.inline
-      def deleteOnTitleClick: Self = this.set("onTitleClick", js.undefined)
+      def deleteOnTitleClick: Self = this.set("onTitleClick", ())
       
       @scala.inline
       def setTitleVdomElement(value: VdomElement): Self = this.set("title", value.rawElement.asInstanceOf[js.Any])
       
       @scala.inline
       def setTitleFunction3(
-        value: (/* component */ ReactType[AccordionTitleProps], AccordionTitleProps, /* children */ js.UndefOr[Node | ReactNodeArray]) => Element | Null
+        value: (/* component */ ReactType[AccordionTitleProps], AccordionTitleProps, /* children */ scala.Unit | Node | ReactNodeArray) => Element | Null
       ): Self = this.set("title", js.Any.fromFunction3(value))
       
       @scala.inline
       def setTitle(value: SemanticShorthandItem[AccordionTitleProps]): Self = this.set("title", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteTitle: Self = this.set("title", js.undefined)
+      def deleteTitle: Self = this.set("title", ())
     }
   }
   
@@ -139,5 +136,5 @@ object accordionPanelMod {
   class default ()
     extends Component[AccordionPanelProps, js.Object, js.Any]
   
-  type AccordionPanel = japgolly.scalajs.react.raw.React.Component[AccordionPanelProps with js.Object, js.Object]
+  type AccordionPanel = japgolly.scalajs.react.raw.React.Component[AccordionPanelProps & js.Object, js.Object]
 }

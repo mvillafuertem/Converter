@@ -2,7 +2,6 @@ package typingsJapgolly.semanticUiReact.components
 
 import typingsJapgolly.semanticUiReact.buttonOrMod.ButtonOrProps
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object ButtonOr {

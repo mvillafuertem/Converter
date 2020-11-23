@@ -1,13 +1,12 @@
 package typingsJapgolly.react.mod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait FunctionComponentElement[P] extends ReactElement {
   
-  var ref: js.UndefOr[js.Any] = js.native
+  var ref: scala.Unit | js.Any = js.native
 }
 object FunctionComponentElement {
   
@@ -19,13 +18,13 @@ object FunctionComponentElement {
   }
   
   @scala.inline
-  implicit class FunctionComponentElementOps[Self <: FunctionComponentElement[_], P] (val x: Self with FunctionComponentElement[P]) extends AnyVal {
+  implicit class FunctionComponentElementOps[Self <: FunctionComponentElement[?], P] (val x: Self & FunctionComponentElement[P]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -37,6 +36,6 @@ object FunctionComponentElement {
     def setRef(value: js.Any): Self = this.set("ref", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteRef: Self = this.set("ref", js.undefined)
+    def deleteRef: Self = this.set("ref", ())
   }
 }

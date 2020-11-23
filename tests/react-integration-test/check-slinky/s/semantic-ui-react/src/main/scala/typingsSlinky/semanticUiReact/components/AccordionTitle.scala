@@ -12,7 +12,6 @@ import typingsSlinky.semanticUiReact.accordionTitleMod.default
 import typingsSlinky.semanticUiReact.genericMod.SemanticShorthandContent
 import typingsSlinky.semanticUiReact.genericMod.SemanticShorthandItem
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object AccordionTitle {
@@ -47,14 +46,14 @@ object AccordionTitle {
     @scala.inline
     def iconFunction3(
       value: (/* component */ ReactType[
-          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify IconProps */ _
-        ], /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify IconProps */ _, /* children */ js.UndefOr[ReactElement | ReactNodeArray]) => ReactElement | Null
+          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify IconProps */ js.Any
+        ], /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify IconProps */ js.Any, /* children */ scala.Unit | ReactElement | ReactNodeArray) => ReactElement | Null
     ): this.type = set("icon", js.Any.fromFunction3(value))
     
     @scala.inline
     def icon(
       value: SemanticShorthandItem[
-          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify IconProps */ _
+          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify IconProps */ js.Any
         ]
     ): this.type = set("icon", value.asInstanceOf[js.Any])
     

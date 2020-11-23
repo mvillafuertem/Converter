@@ -18,7 +18,6 @@ import typingsJapgolly.semanticUiReact.semanticUiReactStrings.left
 import typingsJapgolly.semanticUiReact.semanticUiReactStrings.right
 import typingsJapgolly.semanticUiReact.semanticUiReactStrings.top
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object buttonGroupMod {
@@ -44,70 +43,70 @@ object buttonGroupMod {
   trait StrictButtonGroupProps extends js.Object {
     
     /** An element type to render as (string or function). */
-    var as: js.UndefOr[js.Any] = js.native
+    var as: scala.Unit | js.Any = js.native
     
     /** Groups can be attached to other content. */
-    var attached: js.UndefOr[Boolean | left | right | top | bottom] = js.native
+    var attached: scala.Unit | Boolean | left | right | top | bottom = js.native
     
     /** Groups can be less pronounced. */
-    var basic: js.UndefOr[Boolean] = js.native
+    var basic: scala.Unit | Boolean = js.native
     
     /** Array of shorthand Button values. */
-    var buttons: js.UndefOr[SemanticShorthandCollection[ButtonProps]] = js.native
+    var buttons: scala.Unit | SemanticShorthandCollection[ButtonProps] = js.native
     
     /** Primary content. */
-    var children: js.UndefOr[Node] = js.native
+    var children: scala.Unit | Node = js.native
     
     /** Additional classes. */
-    var className: js.UndefOr[String] = js.native
+    var className: scala.Unit | String = js.native
     
     /** Groups can have a shared color. */
-    var color: js.UndefOr[SemanticCOLORS] = js.native
+    var color: scala.Unit | SemanticCOLORS = js.native
     
     /** Groups can reduce their padding to fit into tighter spaces. */
-    var compact: js.UndefOr[Boolean] = js.native
+    var compact: scala.Unit | Boolean = js.native
     
     /** Shorthand for primary content. */
-    var content: js.UndefOr[SemanticShorthandContent] = js.native
+    var content: scala.Unit | SemanticShorthandContent = js.native
     
     /** Groups can be aligned to the left or right of its container. */
-    var floated: js.UndefOr[SemanticFLOATS] = js.native
+    var floated: scala.Unit | SemanticFLOATS = js.native
     
     /** Groups can take the width of their container. */
-    var fluid: js.UndefOr[Boolean] = js.native
+    var fluid: scala.Unit | Boolean = js.native
     
     /** Groups can be formatted as icons. */
-    var icon: js.UndefOr[Boolean] = js.native
+    var icon: scala.Unit | Boolean = js.native
     
     /** Groups can be formatted to appear on dark backgrounds. */
-    var inverted: js.UndefOr[Boolean] = js.native
+    var inverted: scala.Unit | Boolean = js.native
     
     /** Groups can be formatted as labeled icon buttons. */
-    var labeled: js.UndefOr[Boolean] = js.native
+    var labeled: scala.Unit | Boolean = js.native
     
     /** Groups can hint towards a negative consequence. */
-    var negative: js.UndefOr[Boolean] = js.native
+    var negative: scala.Unit | Boolean = js.native
     
     /** Groups can hint towards a positive consequence. */
-    var positive: js.UndefOr[Boolean] = js.native
+    var positive: scala.Unit | Boolean = js.native
     
     /** Groups can be formatted to show different levels of emphasis. */
-    var primary: js.UndefOr[Boolean] = js.native
+    var primary: scala.Unit | Boolean = js.native
     
     /** Groups can be formatted to show different levels of emphasis. */
-    var secondary: js.UndefOr[Boolean] = js.native
+    var secondary: scala.Unit | Boolean = js.native
     
     /** Groups can have different sizes. */
-    var size: js.UndefOr[SemanticSIZES] = js.native
+    var size: scala.Unit | SemanticSIZES = js.native
     
     /** Groups can be formatted to toggle on and off. */
-    var toggle: js.UndefOr[Boolean] = js.native
+    var toggle: scala.Unit | Boolean = js.native
     
     /** Groups can be formatted to appear vertically. */
-    var vertical: js.UndefOr[Boolean] = js.native
+    var vertical: scala.Unit | Boolean = js.native
     
     /** Groups can have their widths divided evenly. */
-    var widths: js.UndefOr[SemanticWIDTHS] = js.native
+    var widths: scala.Unit | SemanticWIDTHS = js.native
   }
   object StrictButtonGroupProps {
     
@@ -124,7 +123,7 @@ object buttonGroupMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -136,19 +135,19 @@ object buttonGroupMod {
       def setAs(value: js.Any): Self = this.set("as", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAs: Self = this.set("as", js.undefined)
+      def deleteAs: Self = this.set("as", ())
       
       @scala.inline
       def setAttached(value: Boolean | left | right | top | bottom): Self = this.set("attached", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAttached: Self = this.set("attached", js.undefined)
+      def deleteAttached: Self = this.set("attached", ())
       
       @scala.inline
       def setBasic(value: Boolean): Self = this.set("basic", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteBasic: Self = this.set("basic", js.undefined)
+      def deleteBasic: Self = this.set("basic", ())
       
       @scala.inline
       def setButtonsVarargs(value: SemanticShorthandItem[ButtonProps]*): Self = this.set("buttons", js.Array(value :_*))
@@ -157,7 +156,7 @@ object buttonGroupMod {
       def setButtons(value: SemanticShorthandCollection[ButtonProps]): Self = this.set("buttons", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteButtons: Self = this.set("buttons", js.undefined)
+      def deleteButtons: Self = this.set("buttons", ())
       
       @scala.inline
       def setChildrenVdomElement(value: VdomElement): Self = this.set("children", value.rawElement.asInstanceOf[js.Any])
@@ -166,25 +165,25 @@ object buttonGroupMod {
       def setChildren(value: VdomNode): Self = this.set("children", value.rawNode.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteChildren: Self = this.set("children", js.undefined)
+      def deleteChildren: Self = this.set("children", ())
       
       @scala.inline
       def setClassName(value: String): Self = this.set("className", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteClassName: Self = this.set("className", js.undefined)
+      def deleteClassName: Self = this.set("className", ())
       
       @scala.inline
       def setColor(value: SemanticCOLORS): Self = this.set("color", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteColor: Self = this.set("color", js.undefined)
+      def deleteColor: Self = this.set("color", ())
       
       @scala.inline
       def setCompact(value: Boolean): Self = this.set("compact", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteCompact: Self = this.set("compact", js.undefined)
+      def deleteCompact: Self = this.set("compact", ())
       
       @scala.inline
       def setContentVdomElement(value: VdomElement): Self = this.set("content", value.rawElement.asInstanceOf[js.Any])
@@ -193,85 +192,85 @@ object buttonGroupMod {
       def setContent(value: SemanticShorthandContent): Self = this.set("content", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteContent: Self = this.set("content", js.undefined)
+      def deleteContent: Self = this.set("content", ())
       
       @scala.inline
       def setFloated(value: SemanticFLOATS): Self = this.set("floated", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteFloated: Self = this.set("floated", js.undefined)
+      def deleteFloated: Self = this.set("floated", ())
       
       @scala.inline
       def setFluid(value: Boolean): Self = this.set("fluid", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteFluid: Self = this.set("fluid", js.undefined)
+      def deleteFluid: Self = this.set("fluid", ())
       
       @scala.inline
       def setIcon(value: Boolean): Self = this.set("icon", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteIcon: Self = this.set("icon", js.undefined)
+      def deleteIcon: Self = this.set("icon", ())
       
       @scala.inline
       def setInverted(value: Boolean): Self = this.set("inverted", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteInverted: Self = this.set("inverted", js.undefined)
+      def deleteInverted: Self = this.set("inverted", ())
       
       @scala.inline
       def setLabeled(value: Boolean): Self = this.set("labeled", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteLabeled: Self = this.set("labeled", js.undefined)
+      def deleteLabeled: Self = this.set("labeled", ())
       
       @scala.inline
       def setNegative(value: Boolean): Self = this.set("negative", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteNegative: Self = this.set("negative", js.undefined)
+      def deleteNegative: Self = this.set("negative", ())
       
       @scala.inline
       def setPositive(value: Boolean): Self = this.set("positive", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePositive: Self = this.set("positive", js.undefined)
+      def deletePositive: Self = this.set("positive", ())
       
       @scala.inline
       def setPrimary(value: Boolean): Self = this.set("primary", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePrimary: Self = this.set("primary", js.undefined)
+      def deletePrimary: Self = this.set("primary", ())
       
       @scala.inline
       def setSecondary(value: Boolean): Self = this.set("secondary", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteSecondary: Self = this.set("secondary", js.undefined)
+      def deleteSecondary: Self = this.set("secondary", ())
       
       @scala.inline
       def setSize(value: SemanticSIZES): Self = this.set("size", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteSize: Self = this.set("size", js.undefined)
+      def deleteSize: Self = this.set("size", ())
       
       @scala.inline
       def setToggle(value: Boolean): Self = this.set("toggle", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteToggle: Self = this.set("toggle", js.undefined)
+      def deleteToggle: Self = this.set("toggle", ())
       
       @scala.inline
       def setVertical(value: Boolean): Self = this.set("vertical", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteVertical: Self = this.set("vertical", js.undefined)
+      def deleteVertical: Self = this.set("vertical", ())
       
       @scala.inline
       def setWidths(value: SemanticWIDTHS): Self = this.set("widths", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteWidths: Self = this.set("widths", js.undefined)
+      def deleteWidths: Self = this.set("widths", ())
     }
   }
 }

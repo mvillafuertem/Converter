@@ -4,7 +4,6 @@ import japgolly.scalajs.react.vdom.VdomElement
 import typingsJapgolly.StBuildingComponent
 import typingsJapgolly.semanticUiReact.genericMod.SemanticShorthandContent
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @scala.inline

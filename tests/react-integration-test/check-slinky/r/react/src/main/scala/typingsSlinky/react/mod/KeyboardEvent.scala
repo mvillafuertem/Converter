@@ -4,11 +4,10 @@ import org.scalajs.dom.raw.Event
 import org.scalajs.dom.raw.EventTarget
 import slinky.web.SyntheticKeyboardEvent
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
-trait KeyboardEvent[T] extends BaseSyntheticEvent[Event, EventTarget with T, EventTarget] {
+trait KeyboardEvent[T] extends BaseSyntheticEvent[Event, EventTarget & T, EventTarget] {
   
   var altKey: Boolean = js.native
   
@@ -49,7 +48,7 @@ object KeyboardEvent {
     cancelable: Boolean,
     charCode: Double,
     ctrlKey: Boolean,
-    currentTarget: EventTarget with T,
+    currentTarget: EventTarget & T,
     defaultPrevented: Boolean,
     eventPhase: Double,
     getModifierState: String => Boolean,
@@ -78,13 +77,13 @@ object KeyboardEvent {
   }
   
   @scala.inline
-  implicit class KeyboardEventOps[Self <: SyntheticKeyboardEvent[_], T] (val x: Self with SyntheticKeyboardEvent[T]) extends AnyVal {
+  implicit class KeyboardEventOps[Self <: SyntheticKeyboardEvent[?], T] (val x: Self & SyntheticKeyboardEvent[T]) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {

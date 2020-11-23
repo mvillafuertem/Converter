@@ -9,7 +9,6 @@ import typings.constEnum.constEnumNumbers.`65535`
 import typings.constEnum.constEnumNumbers.`65536`
 import typings.constEnum.constEnumStrings.C
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {

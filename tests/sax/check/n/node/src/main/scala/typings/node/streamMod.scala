@@ -6,7 +6,6 @@ import typings.node.anon.End
 import typings.node.eventsMod.EventEmitter
 import typings.node.nodeStrings.close
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object streamMod {
@@ -31,9 +30,9 @@ object streamMod {
     def end(cb: js.Function): Unit = js.native
     def end(chunk: js.Any): Unit = js.native
     def end(chunk: js.Any, cb: js.Function): Unit = js.native
-    def end(chunk: js.Any, encoding: js.UndefOr[scala.Nothing], cb: js.Function): Unit = js.native
     def end(chunk: js.Any, encoding: String): Unit = js.native
     def end(chunk: js.Any, encoding: String, cb: js.Function): Unit = js.native
+    def end(chunk: js.Any, encoding: Unit, cb: js.Function): Unit = js.native
     
     var writable: Boolean = js.native
   }
@@ -43,7 +42,7 @@ object streamMod {
     extends ReadableOptions
        with WritableOptions {
     
-    var allowHalfOpen: js.UndefOr[Boolean] = js.native
+    var allowHalfOpen: scala.Unit | Boolean = js.native
   }
   object DuplexOptions {
     
@@ -60,7 +59,7 @@ object streamMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -72,7 +71,7 @@ object streamMod {
       def setAllowHalfOpen(value: Boolean): Self = this.set("allowHalfOpen", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAllowHalfOpen: Self = this.set("allowHalfOpen", js.undefined)
+      def deleteAllowHalfOpen: Self = this.set("allowHalfOpen", ())
     }
   }
   
@@ -89,15 +88,15 @@ object streamMod {
   @js.native
   trait ReadableOptions extends js.Object {
     
-    var destroy: js.UndefOr[js.Function1[/* error */ js.UndefOr[Error], _]] = js.native
+    var destroy: scala.Unit | (js.Function1[/* error */ scala.Unit | Error, ?]) = js.native
     
-    var encoding: js.UndefOr[String] = js.native
+    var encoding: scala.Unit | String = js.native
     
-    var highWaterMark: js.UndefOr[Double] = js.native
+    var highWaterMark: scala.Unit | Double = js.native
     
-    var objectMode: js.UndefOr[Boolean] = js.native
+    var objectMode: scala.Unit | Boolean = js.native
     
-    var read: js.UndefOr[js.ThisFunction1[/* this */ Readable, /* size */ js.UndefOr[Double], _]] = js.native
+    var read: scala.Unit | (js.ThisFunction1[/* this */ Readable, /* size */ scala.Unit | Double, ?]) = js.native
   }
   object ReadableOptions {
     
@@ -114,7 +113,7 @@ object streamMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -123,34 +122,34 @@ object streamMod {
       }
       
       @scala.inline
-      def setDestroy(value: /* error */ js.UndefOr[Error] => _): Self = this.set("destroy", js.Any.fromFunction1(value))
+      def setDestroy(value: /* error */ scala.Unit | Error => ?): Self = this.set("destroy", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteDestroy: Self = this.set("destroy", js.undefined)
+      def deleteDestroy: Self = this.set("destroy", ())
       
       @scala.inline
       def setEncoding(value: String): Self = this.set("encoding", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteEncoding: Self = this.set("encoding", js.undefined)
+      def deleteEncoding: Self = this.set("encoding", ())
       
       @scala.inline
       def setHighWaterMark(value: Double): Self = this.set("highWaterMark", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteHighWaterMark: Self = this.set("highWaterMark", js.undefined)
+      def deleteHighWaterMark: Self = this.set("highWaterMark", ())
       
       @scala.inline
       def setObjectMode(value: Boolean): Self = this.set("objectMode", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteObjectMode: Self = this.set("objectMode", js.undefined)
+      def deleteObjectMode: Self = this.set("objectMode", ())
       
       @scala.inline
-      def setRead(value: js.ThisFunction1[/* this */ Readable, /* size */ js.UndefOr[Double], _]): Self = this.set("read", value.asInstanceOf[js.Any])
+      def setRead(value: js.ThisFunction1[/* this */ Readable, /* size */ scala.Unit | Double, ?]): Self = this.set("read", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteRead: Self = this.set("read", js.undefined)
+      def deleteRead: Self = this.set("read", ())
     }
   }
   
@@ -169,9 +168,9 @@ object streamMod {
     def end(cb: js.Function): Unit = js.native
     def end(chunk: js.Any): Unit = js.native
     def end(chunk: js.Any, cb: js.Function): Unit = js.native
-    def end(chunk: js.Any, encoding: js.UndefOr[scala.Nothing], cb: js.Function): Unit = js.native
     def end(chunk: js.Any, encoding: String): Unit = js.native
     def end(chunk: js.Any, encoding: String, cb: js.Function): Unit = js.native
+    def end(chunk: js.Any, encoding: Unit, cb: js.Function): Unit = js.native
     
     @JSName("on")
     def on_close(event: close, listener: js.Function0[Unit]): this.type = js.native
@@ -180,9 +179,7 @@ object streamMod {
   @js.native
   trait WritableOptions extends js.Object {
     
-    var `final`: js.UndefOr[
-        js.Function1[/* callback */ js.Function1[/* error */ js.UndefOr[Error], Unit], Unit]
-      ] = js.native
+    var `final`: scala.Unit | (js.Function1[/* callback */ js.Function1[/* error */ scala.Unit | Error, Unit], Unit]) = js.native
   }
   object WritableOptions {
     
@@ -199,7 +196,7 @@ object streamMod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -208,10 +205,10 @@ object streamMod {
       }
       
       @scala.inline
-      def setFinal(value: /* callback */ js.Function1[/* error */ js.UndefOr[Error], Unit] => Unit): Self = this.set("final", js.Any.fromFunction1(value))
+      def setFinal(value: /* callback */ js.Function1[/* error */ scala.Unit | Error, Unit] => Unit): Self = this.set("final", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteFinal: Self = this.set("final", js.undefined)
+      def deleteFinal: Self = this.set("final", ())
     }
   }
   

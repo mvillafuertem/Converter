@@ -4,7 +4,6 @@ import japgolly.scalajs.react.CallbackTo
 import typingsJapgolly.StBuildingComponent
 import typingsJapgolly.StBuildingComponent.Default
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object Component {

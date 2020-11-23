@@ -1,7 +1,6 @@
 package typings.rcFieldForm
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
@@ -9,7 +8,7 @@ object mod {
   @js.native
   trait FormProps extends js.Object {
     
-    var name: js.UndefOr[String] = js.native
+    var name: scala.Unit | String = js.native
   }
   object FormProps {
     
@@ -26,7 +25,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -38,7 +37,7 @@ object mod {
       def setName(value: String): Self = this.set("name", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteName: Self = this.set("name", js.undefined)
+      def deleteName: Self = this.set("name", ())
     }
   }
 }

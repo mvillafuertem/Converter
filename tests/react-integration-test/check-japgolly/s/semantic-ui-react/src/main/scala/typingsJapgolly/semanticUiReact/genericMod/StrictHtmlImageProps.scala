@@ -1,13 +1,12 @@
 package typingsJapgolly.semanticUiReact.genericMod
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait StrictHtmlImageProps extends js.Object {
   
-  var src: js.UndefOr[String] = js.native
+  var src: scala.Unit | String = js.native
 }
 object StrictHtmlImageProps {
   
@@ -24,7 +23,7 @@ object StrictHtmlImageProps {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -36,6 +35,6 @@ object StrictHtmlImageProps {
     def setSrc(value: String): Self = this.set("src", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteSrc: Self = this.set("src", js.undefined)
+    def deleteSrc: Self = this.set("src", ())
   }
 }

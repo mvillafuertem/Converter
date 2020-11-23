@@ -13,14 +13,13 @@ import typingsSlinky.react.mod.HTMLAttributes
 import typingsSlinky.react.mod.InputHTMLAttributes
 import typingsSlinky.react.mod.RefAttributes
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {
   
   @JSImport("react-dropzone", JSImport.Default)
   @js.native
-  def default(props: DropzoneProps with RefAttributes[DropzoneRef]): ReactElement = js.native
+  def default(props: DropzoneProps & RefAttributes[DropzoneRef]): ReactElement = js.native
   
   @JSImport("react-dropzone", "useDropzone")
   @js.native
@@ -32,7 +31,7 @@ object mod {
   @js.native
   trait DropzoneInputProps extends InputHTMLAttributes[HTMLInputElement] {
     
-    var refKey: js.UndefOr[String] = js.native
+    var refKey: scala.Unit | String = js.native
   }
   object DropzoneInputProps {
     
@@ -49,7 +48,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -61,7 +60,7 @@ object mod {
       def setRefKey(value: String): Self = this.set("refKey", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteRefKey: Self = this.set("refKey", js.undefined)
+      def deleteRefKey: Self = this.set("refKey", ())
     }
   }
   
@@ -69,73 +68,65 @@ object mod {
   @js.native
   trait DropzoneOptions extends js.Object {
     
-    var accept: js.UndefOr[String | js.Array[String]] = js.native
+    var accept: scala.Unit | String | js.Array[String] = js.native
     
-    var disabled: js.UndefOr[Boolean] = js.native
+    var disabled: scala.Unit | Boolean = js.native
     
-    var getFilesFromEvent: js.UndefOr[
-        js.Function1[
-          /* event */ DropEvent, 
-          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify Promise<Array<File | DataTransferItem>> */ _
-        ]
-      ] = js.native
+    var getFilesFromEvent: scala.Unit | (js.Function1[
+        /* event */ DropEvent, 
+        /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify Promise<Array<File | DataTransferItem>> */ ?
+      ]) = js.native
     
-    var maxSize: js.UndefOr[Double] = js.native
+    var maxSize: scala.Unit | Double = js.native
     
-    var minSize: js.UndefOr[Double] = js.native
+    var minSize: scala.Unit | Double = js.native
     
-    var multiple: js.UndefOr[Boolean] = js.native
+    var multiple: scala.Unit | Boolean = js.native
     
-    var noClick: js.UndefOr[Boolean] = js.native
+    var noClick: scala.Unit | Boolean = js.native
     
-    var noDrag: js.UndefOr[Boolean] = js.native
+    var noDrag: scala.Unit | Boolean = js.native
     
-    var noDragEventsBubbling: js.UndefOr[Boolean] = js.native
+    var noDragEventsBubbling: scala.Unit | Boolean = js.native
     
-    var noKeyboard: js.UndefOr[Boolean] = js.native
+    var noKeyboard: scala.Unit | Boolean = js.native
     
-    var onDragEnter: js.UndefOr[DragEventHandler[HTMLElement]] = js.native
+    var onDragEnter: scala.Unit | DragEventHandler[HTMLElement] = js.native
     
-    var onDragLeave: js.UndefOr[DragEventHandler[HTMLElement]] = js.native
+    var onDragLeave: scala.Unit | DragEventHandler[HTMLElement] = js.native
     
-    var onDragOver: js.UndefOr[DragEventHandler[HTMLElement]] = js.native
+    var onDragOver: scala.Unit | DragEventHandler[HTMLElement] = js.native
     
-    var onDrop: js.UndefOr[
-        js.Function3[
-          /* acceptedFiles */ js.Array[
-            /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
-          ], 
-          /* rejectedFiles */ js.Array[
-            /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
-          ], 
-          /* event */ DropEvent, 
-          Unit
-        ]
-      ] = js.native
+    var onDrop: scala.Unit | (js.Function3[
+        /* acceptedFiles */ js.Array[
+          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
+        ], 
+        /* rejectedFiles */ js.Array[
+          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
+        ], 
+        /* event */ DropEvent, 
+        Unit
+      ]) = js.native
     
-    var onDropAccepted: js.UndefOr[
-        js.Function2[
-          /* files */ js.Array[
-            /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
-          ], 
-          /* event */ DropEvent, 
-          Unit
-        ]
-      ] = js.native
+    var onDropAccepted: scala.Unit | (js.Function2[
+        /* files */ js.Array[
+          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
+        ], 
+        /* event */ DropEvent, 
+        Unit
+      ]) = js.native
     
-    var onDropRejected: js.UndefOr[
-        js.Function2[
-          /* files */ js.Array[
-            /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
-          ], 
-          /* event */ DropEvent, 
-          Unit
-        ]
-      ] = js.native
+    var onDropRejected: scala.Unit | (js.Function2[
+        /* files */ js.Array[
+          /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
+        ], 
+        /* event */ DropEvent, 
+        Unit
+      ]) = js.native
     
-    var onFileDialogCancel: js.UndefOr[js.Function0[Unit]] = js.native
+    var onFileDialogCancel: scala.Unit | js.Function0[Unit] = js.native
     
-    var preventDropOnDocument: js.UndefOr[Boolean] = js.native
+    var preventDropOnDocument: scala.Unit | Boolean = js.native
   }
   object DropzoneOptions {
     
@@ -152,7 +143,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -167,132 +158,132 @@ object mod {
       def setAccept(value: String | js.Array[String]): Self = this.set("accept", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteAccept: Self = this.set("accept", js.undefined)
+      def deleteAccept: Self = this.set("accept", ())
       
       @scala.inline
       def setDisabled(value: Boolean): Self = this.set("disabled", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteDisabled: Self = this.set("disabled", js.undefined)
+      def deleteDisabled: Self = this.set("disabled", ())
       
       @scala.inline
       def setGetFilesFromEvent(
-        value: /* event */ DropEvent => /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify Promise<Array<File | DataTransferItem>> */ _
+        value: /* event */ DropEvent => /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify Promise<Array<File | DataTransferItem>> */ ?
       ): Self = this.set("getFilesFromEvent", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteGetFilesFromEvent: Self = this.set("getFilesFromEvent", js.undefined)
+      def deleteGetFilesFromEvent: Self = this.set("getFilesFromEvent", ())
       
       @scala.inline
       def setMaxSize(value: Double): Self = this.set("maxSize", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteMaxSize: Self = this.set("maxSize", js.undefined)
+      def deleteMaxSize: Self = this.set("maxSize", ())
       
       @scala.inline
       def setMinSize(value: Double): Self = this.set("minSize", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteMinSize: Self = this.set("minSize", js.undefined)
+      def deleteMinSize: Self = this.set("minSize", ())
       
       @scala.inline
       def setMultiple(value: Boolean): Self = this.set("multiple", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteMultiple: Self = this.set("multiple", js.undefined)
+      def deleteMultiple: Self = this.set("multiple", ())
       
       @scala.inline
       def setNoClick(value: Boolean): Self = this.set("noClick", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteNoClick: Self = this.set("noClick", js.undefined)
+      def deleteNoClick: Self = this.set("noClick", ())
       
       @scala.inline
       def setNoDrag(value: Boolean): Self = this.set("noDrag", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteNoDrag: Self = this.set("noDrag", js.undefined)
+      def deleteNoDrag: Self = this.set("noDrag", ())
       
       @scala.inline
       def setNoDragEventsBubbling(value: Boolean): Self = this.set("noDragEventsBubbling", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteNoDragEventsBubbling: Self = this.set("noDragEventsBubbling", js.undefined)
+      def deleteNoDragEventsBubbling: Self = this.set("noDragEventsBubbling", ())
       
       @scala.inline
       def setNoKeyboard(value: Boolean): Self = this.set("noKeyboard", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteNoKeyboard: Self = this.set("noKeyboard", js.undefined)
+      def deleteNoKeyboard: Self = this.set("noKeyboard", ())
       
       @scala.inline
       def setOnDragEnter(value: DragEvent[HTMLElement] => Unit): Self = this.set("onDragEnter", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteOnDragEnter: Self = this.set("onDragEnter", js.undefined)
+      def deleteOnDragEnter: Self = this.set("onDragEnter", ())
       
       @scala.inline
       def setOnDragLeave(value: DragEvent[HTMLElement] => Unit): Self = this.set("onDragLeave", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteOnDragLeave: Self = this.set("onDragLeave", js.undefined)
+      def deleteOnDragLeave: Self = this.set("onDragLeave", ())
       
       @scala.inline
       def setOnDragOver(value: DragEvent[HTMLElement] => Unit): Self = this.set("onDragOver", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteOnDragOver: Self = this.set("onDragOver", js.undefined)
+      def deleteOnDragOver: Self = this.set("onDragOver", ())
       
       @scala.inline
       def setOnDrop(
         value: (/* acceptedFiles */ js.Array[
-              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
+              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
             ], /* rejectedFiles */ js.Array[
-              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
+              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
             ], /* event */ DropEvent) => Unit
       ): Self = this.set("onDrop", js.Any.fromFunction3(value))
       
       @scala.inline
-      def deleteOnDrop: Self = this.set("onDrop", js.undefined)
+      def deleteOnDrop: Self = this.set("onDrop", ())
       
       @scala.inline
       def setOnDropAccepted(
         value: (/* files */ js.Array[
-              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
+              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
             ], /* event */ DropEvent) => Unit
       ): Self = this.set("onDropAccepted", js.Any.fromFunction2(value))
       
       @scala.inline
-      def deleteOnDropAccepted: Self = this.set("onDropAccepted", js.undefined)
+      def deleteOnDropAccepted: Self = this.set("onDropAccepted", ())
       
       @scala.inline
       def setOnDropRejected(
         value: (/* files */ js.Array[
-              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
+              /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
             ], /* event */ DropEvent) => Unit
       ): Self = this.set("onDropRejected", js.Any.fromFunction2(value))
       
       @scala.inline
-      def deleteOnDropRejected: Self = this.set("onDropRejected", js.undefined)
+      def deleteOnDropRejected: Self = this.set("onDropRejected", ())
       
       @scala.inline
       def setOnFileDialogCancel(value: () => Unit): Self = this.set("onFileDialogCancel", js.Any.fromFunction0(value))
       
       @scala.inline
-      def deleteOnFileDialogCancel: Self = this.set("onFileDialogCancel", js.undefined)
+      def deleteOnFileDialogCancel: Self = this.set("onFileDialogCancel", ())
       
       @scala.inline
       def setPreventDropOnDocument(value: Boolean): Self = this.set("preventDropOnDocument", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePreventDropOnDocument: Self = this.set("preventDropOnDocument", js.undefined)
+      def deletePreventDropOnDocument: Self = this.set("preventDropOnDocument", ())
     }
   }
   
   @js.native
   trait DropzoneProps extends DropzoneOptions {
     
-    var children: js.UndefOr[js.Function1[/* state */ DropzoneState, ReactElement]] = js.native
+    var children: scala.Unit | (js.Function1[/* state */ DropzoneState, ReactElement]) = js.native
   }
   object DropzoneProps {
     
@@ -309,7 +300,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -321,7 +312,7 @@ object mod {
       def setChildren(value: /* state */ DropzoneState => ReactElement): Self = this.set("children", js.Any.fromFunction1(value))
       
       @scala.inline
-      def deleteChildren: Self = this.set("children", js.undefined)
+      def deleteChildren: Self = this.set("children", ())
     }
   }
   
@@ -345,7 +336,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -363,7 +354,7 @@ object mod {
     extends HTMLAttributes[HTMLElement]
        with /* key */ StringDictionary[js.Any] {
     
-    var refKey: js.UndefOr[String] = js.native
+    var refKey: scala.Unit | String = js.native
   }
   object DropzoneRootProps {
     
@@ -380,7 +371,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -392,7 +383,7 @@ object mod {
       def setRefKey(value: String): Self = this.set("refKey", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteRefKey: Self = this.set("refKey", js.undefined)
+      def deleteRefKey: Self = this.set("refKey", ())
     }
   }
   
@@ -401,11 +392,11 @@ object mod {
   trait DropzoneState extends js.Object {
     
     var acceptedFiles: js.Array[
-        /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
+        /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
       ] = js.native
     
     var draggedFiles: js.Array[
-        /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
+        /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
       ] = js.native
     
     def getInputProps(): DropzoneInputProps = js.native
@@ -429,7 +420,7 @@ object mod {
     def open(): Unit = js.native
     
     var rejectedFiles: js.Array[
-        /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
+        /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ ?
       ] = js.native
     
     var rootRef: ReactRef[HTMLElement] = js.native

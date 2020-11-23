@@ -3,14 +3,13 @@ package typings.typeMappings
 import typings.typeMappings.anon.Get
 import typings.typeMappings.anon.Set
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 /* Inlined parent type-mappings.Proxify<type-mappings.Person> */
 @js.native
 trait IProxiedPerson extends js.Object {
   
-  var age: js.UndefOr[Get] = js.native
+  var age: scala.Unit | Get = js.native
   
   var name: Set = js.native
 }
@@ -29,7 +28,7 @@ object IProxiedPerson {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -44,6 +43,6 @@ object IProxiedPerson {
     def setAge(value: Get): Self = this.set("age", value.asInstanceOf[js.Any])
     
     @scala.inline
-    def deleteAge: Self = this.set("age", js.undefined)
+    def deleteAge: Self = this.set("age", ())
   }
 }

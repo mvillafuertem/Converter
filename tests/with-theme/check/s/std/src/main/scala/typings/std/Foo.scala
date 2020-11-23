@@ -1,13 +1,12 @@
 package typings.std
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
 trait Foo extends js.Object {
   
-  var f: js.UndefOr[js.Function1[/* n */ Double, String]] = js.native
+  var f: scala.Unit | (js.Function1[/* n */ Double, String]) = js.native
 }
 object Foo {
   
@@ -24,7 +23,7 @@ object Foo {
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {
@@ -36,6 +35,6 @@ object Foo {
     def setF(value: /* n */ Double => String): Self = this.set("f", js.Any.fromFunction1(value))
     
     @scala.inline
-    def deleteF: Self = this.set("f", js.undefined)
+    def deleteF: Self = this.set("f", ())
   }
 }

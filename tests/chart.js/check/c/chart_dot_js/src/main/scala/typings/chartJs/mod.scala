@@ -7,7 +7,6 @@ import typings.std.ArrayLike
 import typings.std.CanvasRenderingContext2D
 import typings.std.HTMLCanvasElement
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 /* static members */
@@ -60,9 +59,9 @@ object mod {
     def getElementsAtEvent(e: js.Any): js.Array[js.Object] = js.native
     
     def render(): js.Object = js.native
-    def render(duration: js.UndefOr[scala.Nothing], `lazy`: js.Any): js.Object = js.native
     def render(duration: js.Any): js.Object = js.native
     def render(duration: js.Any, `lazy`: js.Any): js.Object = js.native
+    def render(duration: Unit, `lazy`: js.Any): js.Object = js.native
     
     def resize(): js.Object = js.native
     
@@ -71,15 +70,15 @@ object mod {
     def toBase64(): String = js.native
     
     def update(): js.Object = js.native
-    def update(duration: js.UndefOr[scala.Nothing], `lazy`: js.Any): js.Object = js.native
     def update(duration: js.Any): js.Object = js.native
     def update(duration: js.Any, `lazy`: js.Any): js.Object = js.native
+    def update(duration: Unit, `lazy`: js.Any): js.Object = js.native
   }
   
   @js.native
   trait ChartData extends js.Object {
     
-    var labels: js.UndefOr[js.Array[String | js.Array[String]]] = js.native
+    var labels: scala.Unit | (js.Array[String | js.Array[String]]) = js.native
   }
   object ChartData {
     
@@ -96,7 +95,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -111,7 +110,7 @@ object mod {
       def setLabels(value: js.Array[String | js.Array[String]]): Self = this.set("labels", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteLabels: Self = this.set("labels", js.undefined)
+      def deleteLabels: Self = this.set("labels", ())
     }
   }
   
@@ -135,7 +134,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -152,9 +151,9 @@ object mod {
   trait ChartOptions extends js.Object {
     
     // Plugins can require any options
-    var plugins: js.UndefOr[StringDictionary[js.Any]] = js.native
+    var plugins: scala.Unit | StringDictionary[js.Any] = js.native
     
-    var responsive: js.UndefOr[Boolean] = js.native
+    var responsive: scala.Unit | Boolean = js.native
   }
   object ChartOptions {
     
@@ -171,7 +170,7 @@ object mod {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -183,13 +182,13 @@ object mod {
       def setPlugins(value: StringDictionary[js.Any]): Self = this.set("plugins", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deletePlugins: Self = this.set("plugins", js.undefined)
+      def deletePlugins: Self = this.set("plugins", ())
       
       @scala.inline
       def setResponsive(value: Boolean): Self = this.set("responsive", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteResponsive: Self = this.set("responsive", js.undefined)
+      def deleteResponsive: Self = this.set("responsive", ())
     }
   }
 }

@@ -1,7 +1,6 @@
 package typings.phaser
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -9,9 +8,9 @@ object anon {
   @js.native
   trait LowerBound extends js.Object {
     
-    var lowerBound: js.UndefOr[js.Array[Double]] = js.native
+    var lowerBound: scala.Unit | js.Array[Double] = js.native
     
-    var upperBound: js.UndefOr[js.Array[Double]] = js.native
+    var upperBound: scala.Unit | js.Array[Double] = js.native
   }
   object LowerBound {
     
@@ -28,7 +27,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -43,7 +42,7 @@ object anon {
       def setLowerBound(value: js.Array[Double]): Self = this.set("lowerBound", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteLowerBound: Self = this.set("lowerBound", js.undefined)
+      def deleteLowerBound: Self = this.set("lowerBound", ())
       
       @scala.inline
       def setUpperBoundVarargs(value: Double*): Self = this.set("upperBound", js.Array(value :_*))
@@ -52,7 +51,7 @@ object anon {
       def setUpperBound(value: js.Array[Double]): Self = this.set("upperBound", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteUpperBound: Self = this.set("upperBound", js.undefined)
+      def deleteUpperBound: Self = this.set("upperBound", ())
     }
   }
 }

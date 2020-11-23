@@ -6,7 +6,6 @@ import typingsSlinky.react.mod.ProfilerProps
 import typingsSlinky.react.reactStrings.mount
 import typingsSlinky.react.reactStrings.update
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object Profiler {

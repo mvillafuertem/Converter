@@ -1,7 +1,6 @@
 package typingsSlinky.stardustUiReactComponentEventListener
 
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object anon {
@@ -38,7 +37,7 @@ object anon {
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -71,12 +70,49 @@ object anon {
   @js.native
   trait Listener extends js.Object {
     
-    var capture: js.UndefOr[scala.Nothing] = js.native
+    var capture: Unit = js.native
     
-    var listener: js.UndefOr[scala.Nothing] = js.native
+    var listener: Unit = js.native
     
-    var targetRef: js.UndefOr[scala.Nothing] = js.native
+    var targetRef: Unit = js.native
     
-    var `type`: js.UndefOr[scala.Nothing] = js.native
+    var `type`: Unit = js.native
+  }
+  object Listener {
+    
+    @scala.inline
+    def apply(capture: Unit, listener: Unit, targetRef: Unit, `type`: Unit): Listener = {
+      val __obj = js.Dynamic.literal(capture = capture.asInstanceOf[js.Any], listener = listener.asInstanceOf[js.Any], targetRef = targetRef.asInstanceOf[js.Any])
+      __obj.updateDynamic("type")(`type`.asInstanceOf[js.Any])
+      __obj.asInstanceOf[Listener]
+    }
+    
+    @scala.inline
+    implicit class ListenerOps[Self <: Listener] (val x: Self) extends AnyVal {
+      
+      @scala.inline
+      def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
+      
+      @scala.inline
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
+      
+      @scala.inline
+      def set(key: String, value: js.Any): Self = {
+        x.asInstanceOf[js.Dynamic].updateDynamic(key)(value)
+        x
+      }
+      
+      @scala.inline
+      def setCapture(value: Unit): Self = this.set("capture", value.asInstanceOf[js.Any])
+      
+      @scala.inline
+      def setListener(value: Unit): Self = this.set("listener", value.asInstanceOf[js.Any])
+      
+      @scala.inline
+      def setTargetRef(value: Unit): Self = this.set("targetRef", value.asInstanceOf[js.Any])
+      
+      @scala.inline
+      def setType(value: Unit): Self = this.set("type", value.asInstanceOf[js.Any])
+    }
   }
 }

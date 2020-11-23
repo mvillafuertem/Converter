@@ -6,11 +6,10 @@ import japgolly.scalajs.react.ReactMouseEventFrom
 import org.scalajs.dom.raw.Element
 import org.scalajs.dom.raw.EventTarget
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 @js.native
-trait MouseEvent[T, E] extends BaseSyntheticEvent[E, EventTarget with T, EventTarget] {
+trait MouseEvent[T, E] extends BaseSyntheticEvent[E, EventTarget & T, EventTarget] {
   
   var altKey: Boolean = js.native
   
@@ -59,7 +58,7 @@ object MouseEvent {
     clientX: Double,
     clientY: Double,
     ctrlKey: Boolean,
-    currentTarget: EventTarget with T,
+    currentTarget: EventTarget & T,
     defaultPrevented: Boolean,
     eventPhase: Double,
     getModifierState: String => Boolean,
@@ -89,13 +88,13 @@ object MouseEvent {
   }
   
   @scala.inline
-  implicit class MouseEventOps[Self <: ReactMouseEventFrom[Element], T, E] (val x: Self with (ReactMouseEventFrom[T with Element])) extends AnyVal {
+  implicit class MouseEventOps[Self <: ReactMouseEventFrom[Element], T, E] (val x: Self & (ReactMouseEventFrom[T & Element])) extends AnyVal {
     
     @scala.inline
     def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
     
     @scala.inline
-    def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+    def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
     
     @scala.inline
     def set(key: String, value: js.Any): Self = {

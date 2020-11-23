@@ -3,7 +3,6 @@ package typings.webpackEnv
 import typings.webpackEnv.NodeJS.Process
 import typings.webpackEnv.WebpackModuleApi.RequireLambda
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object global {

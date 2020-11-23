@@ -38,6 +38,7 @@ object Versions {
 
   val Scala212 = Scala("2.12.11")
   val Scala213 = Scala("2.13.3")
+  val Dotty    = Scala("3.0.0-M2-bin-20201116-9c850e3-NIGHTLY")
 
   case class ScalaJs(scalaJsVersion: String) {
     val scalaJsBinVersion: String =

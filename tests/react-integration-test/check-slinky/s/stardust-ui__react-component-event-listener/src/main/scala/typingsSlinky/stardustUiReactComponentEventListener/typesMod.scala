@@ -2,7 +2,6 @@ package typingsSlinky.stardustUiReactComponentEventListener
 
 import slinky.core.facade.ReactRef
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object typesMod {
@@ -11,7 +10,7 @@ object typesMod {
   trait EventListenerOptions[T /* <: EventTypes */] extends js.Object {
     
     /** Indicating that events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree. */
-    var capture: js.UndefOr[Boolean] = js.native
+    var capture: scala.Unit | Boolean = js.native
     
     /** A function which receives a notification when an event of the specified type occurs. */
     var listener: EventHandler[T] = js.native
@@ -40,13 +39,13 @@ object typesMod {
     }
     
     @scala.inline
-    implicit class EventListenerOptionsOps[Self <: EventListenerOptions[_], T /* <: EventTypes */] (val x: Self with EventListenerOptions[T]) extends AnyVal {
+    implicit class EventListenerOptionsOps[Self <: EventListenerOptions[?], T /* <: EventTypes */] (val x: Self & EventListenerOptions[T]) extends AnyVal {
       
       @scala.inline
       def duplicate: Self = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x)).asInstanceOf[Self]
       
       @scala.inline
-      def combineWith[Other <: js.Any](other: Other): Self with Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self with Other]
+      def combineWith[Other <: js.Any](other: Other): Self & Other = (js.Dynamic.global.Object.assign(js.Dynamic.literal(), x, other.asInstanceOf[js.Any])).asInstanceOf[Self & Other]
       
       @scala.inline
       def set(key: String, value: js.Any): Self = {
@@ -73,7 +72,7 @@ object typesMod {
       def setCapture(value: Boolean): Self = this.set("capture", value.asInstanceOf[js.Any])
       
       @scala.inline
-      def deleteCapture: Self = this.set("capture", js.undefined)
+      def deleteCapture: Self = this.set("capture", ())
     }
   }
   

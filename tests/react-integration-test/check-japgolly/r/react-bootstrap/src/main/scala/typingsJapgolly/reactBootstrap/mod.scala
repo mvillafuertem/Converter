@@ -3,7 +3,6 @@ package typingsJapgolly.reactBootstrap
 import typingsJapgolly.reactBootstrap.bootstrapUtilsMod.BSProps
 import typingsJapgolly.std.Pick
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object mod {

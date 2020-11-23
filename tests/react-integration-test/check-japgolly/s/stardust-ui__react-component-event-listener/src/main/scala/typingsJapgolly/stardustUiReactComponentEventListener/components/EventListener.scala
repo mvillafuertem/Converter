@@ -6,7 +6,6 @@ import typingsJapgolly.StBuildingComponent
 import typingsJapgolly.stardustUiReactComponentEventListener.typesMod.EventListenerOptions
 import typingsJapgolly.stardustUiReactComponentEventListener.typesMod.EventTypes
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object EventListener {

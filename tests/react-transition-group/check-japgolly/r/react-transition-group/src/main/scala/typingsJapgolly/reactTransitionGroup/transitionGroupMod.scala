@@ -6,7 +6,6 @@ import typingsJapgolly.reactTransitionGroup.anon.ChildFactory
 import typingsJapgolly.reactTransitionGroup.reactTransitionGroupStrings.abbr
 import typingsJapgolly.reactTransitionGroup.reactTransitionGroupStrings.animate
 import scala.scalajs.js
-import scala.scalajs.js.`|`
 import scala.scalajs.js.annotation.{JSGlobalScope, JSGlobal, JSImport, JSName, JSBracketAccess}
 
 object transitionGroupMod {
@@ -17,14 +16,14 @@ object transitionGroupMod {
     extends Component[TransitionGroupProps[abbr, js.Any], js.Object]
   
   @js.native
-  trait ComponentTransitionGroupProps[T /* <: ReactType[_] */] extends js.Object {
+  trait ComponentTransitionGroupProps[T /* <: ReactType[js.Any] */] extends js.Object {
     
     var component: T = js.native
   }
   object ComponentTransitionGroupProps {
     
     @scala.inline
-    def apply[T /* <: ReactType[_] */](component: T): ComponentTransitionGroupProps[T] = {
+    def apply[T /* <: ReactType[js.Any] */](component: T): ComponentTransitionGroupProps[T] = {
       val __obj = js.Dynamic.literal(component = component.asInstanceOf[js.Any])
       __obj.asInstanceOf[ComponentTransitionGroupProps[T]]
     }
@@ -33,7 +32,7 @@ object transitionGroupMod {
   @js.native
   trait IntrinsicTransitionGroupProps[T /* <: abbr | animate */] extends js.Object {
     
-    var component: js.UndefOr[T] = js.native
+    var component: scala.Unit | T = js.native
   }
   object IntrinsicTransitionGroupProps {
     
@@ -45,7 +44,7 @@ object transitionGroupMod {
     }
   }
   
-  type TransitionGroup = japgolly.scalajs.react.raw.React.Component[(TransitionGroupProps[abbr, js.Any]) with js.Object, js.Object]
+  type TransitionGroup = japgolly.scalajs.react.raw.React.Component[(TransitionGroupProps[abbr, js.Any]) & js.Object, js.Object]
   
-  type TransitionGroupProps[T /* <: abbr | animate */, V /* <: ReactType[_] */] = (IntrinsicTransitionGroupProps[T] with (/* import warning: importer.ImportType#apply Failed type conversion: react.react.<global>.JSX.IntrinsicElements[T] */ js.Any)) | (ComponentTransitionGroupProps[V] with ChildFactory)
+  type TransitionGroupProps[T /* <: abbr | animate */, V /* <: ReactType[js.Any] */] = (IntrinsicTransitionGroupProps[T] & (/* import warning: importer.ImportType#apply Failed type conversion: react.react.<global>.JSX.IntrinsicElements[T] */ js.Any)) | (ComponentTransitionGroupProps[V] & ChildFactory)
 }
