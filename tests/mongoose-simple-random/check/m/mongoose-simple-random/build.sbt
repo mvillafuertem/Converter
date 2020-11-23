@@ -1,13 +1,13 @@
 organization := "org.scalablytyped"
 name := "mongoose-simple-random"
-version := "0.4-8063f4"
+version := "0.4-aa4f59"
 scalaVersion := "2.13.3"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
-  "com.olvind" %%% "scalablytyped-runtime" % "2.1.0",
-  "org.scalablytyped" %%% "mongoose" % "0.0-unknown-2e5a64",
-  "org.scalablytyped" %%% "node" % "0.0-unknown-ece675",
-  "org.scalablytyped" %%% "std" % "0.0-unknown-8004a9")
+  "com.olvind" %%% "scalablytyped-runtime" % "2.2.0",
+  "org.scalablytyped" %%% "mongoose" % "0.0-unknown-e7882f",
+  "org.scalablytyped" %%% "node" % "0.0-unknown-6a9d01",
+  "org.scalablytyped" %%% "std" % "0.0-unknown-20366a")
 publishArtifact in packageDoc := false
 scalacOptions ++= List("-encoding", "utf-8", "-feature", "-g:notailcalls", "-language:implicitConversions", "-language:higherKinds", "-language:existentials")
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))

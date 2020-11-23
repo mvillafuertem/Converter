@@ -121,11 +121,13 @@ trait ImporterHarness extends AnyFunSuite {
         shouldUseScalaJsDomTypes = false,
         enableLongApplyMethod    = false,
         outputPkg                = Name.typings,
+        versions                 = version,
       ),
   ): Assertion = {
     val testFolder   = findTestFolder(testName)
     val source       = InFolder(testFolder.path / 'in)
     val targetFolder = os.Path(Files.createTempDirectory("scalablytyped-test-"))
+
     val checkFolder = testFolder.path / (flavour match {
       case _: NormalFlavour       => "check"
       case _: SlinkyFlavour       => "check-slinky"

@@ -1,13 +1,13 @@
 organization := "org.scalablytyped"
 name := "material-ui"
-version := "0.0-unknown-1cd7ff"
+version := "0.0-unknown-48d64b"
 scalaVersion := "2.13.3"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
-  "com.olvind" %%% "scalablytyped-runtime" % "2.1.0",
+  "com.olvind" %%% "scalablytyped-runtime" % "2.2.0",
   "me.shadaj" %%% "slinky-web" % "0.6.6",
-  "org.scalablytyped" %%% "react" % "0.0-unknown-9b4904",
-  "org.scalablytyped" %%% "std" % "0.0-unknown-77238c")
+  "org.scalablytyped" %%% "react" % "0.0-unknown-7ded02",
+  "org.scalablytyped" %%% "std" % "0.0-unknown-4346be")
 publishArtifact in packageDoc := false
 scalacOptions ++= List("-encoding", "utf-8", "-feature", "-g:notailcalls", "-language:implicitConversions", "-language:higherKinds", "-language:existentials")
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
