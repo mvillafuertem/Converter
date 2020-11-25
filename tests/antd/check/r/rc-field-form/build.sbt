@@ -1,7 +1,7 @@
 organization := "org.scalablytyped"
 name := "rc-field-form"
-version := "1.4.4-01a04c"
-scalaVersion := "3.0.0-M2-bin-20201116-9c850e3-NIGHTLY"
+version := "1.4.4-d9e056"
+scalaVersion := "3.0.0-M2"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
   "com.olvind" %%% "scalablytyped-runtime" % "2.2.0")

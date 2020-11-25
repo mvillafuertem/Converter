@@ -1,12 +1,12 @@
 organization := "org.scalablytyped"
 name := "numjs"
-version := "0.0-unknown-4fe61a"
-scalaVersion := "3.0.0-M2-bin-20201116-9c850e3-NIGHTLY"
+version := "0.0-unknown-bcda4a"
+scalaVersion := "3.0.0-M2"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
   "com.olvind" %%% "scalablytyped-runtime" % "2.2.0",
-  "org.scalablytyped" %%% "ndarray" % "0.0-unknown-fcbbc6",
-  "org.scalablytyped" %%% "std" % "0.0-unknown-9915f8")
+  "org.scalablytyped" %%% "ndarray" % "0.0-unknown-5de70a",
+  "org.scalablytyped" %%% "std" % "0.0-unknown-0876a7")
 publishArtifact in packageDoc := false
 scalacOptions ++= List("-encoding", "utf-8", "-feature", "-language:implicitConversions", "-language:higherKinds", "-language:existentials")
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))

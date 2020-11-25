@@ -1,10 +1,10 @@
 organization := "org.scalablytyped"
 name := "std"
-version := "0.0-unknown-6054b9"
-scalaVersion := "3.0.0-M2-bin-20201116-9c850e3-NIGHTLY"
+version := "0.0-unknown-c232ff"
+scalaVersion := "3.0.0-M2"
 enablePlugins(ScalaJSPlugin)
 libraryDependencies ++= Seq(
-  "com.github.japgolly.scalajs-react" %%% "core" % "1.7.5" withDottyCompat "2.13.3",
+  "com.github.japgolly.scalajs-react" %%% "core" % "1.7.5" withDottyCompat scalaVersion.value,
   "com.olvind" %%% "scalablytyped-runtime" % "2.2.0")
 publishArtifact in packageDoc := false
 scalacOptions ++= List("-encoding", "utf-8", "-feature", "-language:implicitConversions", "-language:higherKinds", "-language:existentials")

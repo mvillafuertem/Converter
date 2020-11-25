@@ -25,7 +25,7 @@ sealed trait Dep {
       case Dep.ScalaFullVersion(_, artifact, _) =>
         s"${quote(org)} % ${quote(artifact)} % ${quote(version)} cross CrossVersion.Full()"
       case Dep.DottyCompat(dep) =>
-        dep.asSbt + """ withDottyCompat "2.13.3""""
+        dep.asSbt + """ withDottyCompat scalaVersion.value"""
     }
 
   def concrete(versions: Versions): Dep.Concrete =
