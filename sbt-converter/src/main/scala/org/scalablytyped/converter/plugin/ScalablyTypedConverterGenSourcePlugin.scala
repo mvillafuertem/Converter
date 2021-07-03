@@ -2,7 +2,7 @@ package org.scalablytyped.converter
 package plugin
 
 import org.scalablytyped.converter.internal._
-import org.scalablytyped.converter.internal.importer.jsonCodecs.{FileDecoder, FileEncoder}
+import org.scalablytyped.converter.internal.orphanCodecs.{FileDecoder, FileEncoder}
 import org.scalablytyped.converter.internal.maps._
 import org.scalablytyped.converter.internal.scalajs.{Name, QualifiedName}
 import org.scalablytyped.converter.internal.ts.TsIdentLibrary
@@ -106,7 +106,7 @@ object ScalablyTypedConverterGenSourcePlugin extends AutoPlugin {
 
         (Try(Json.force[ImportTypingsGenSources.Input](cachedInputs)).toOption, Json.opt[Seq[File]](cachedOutputs)) match {
           case (Some(`input`), Some(output)) =>
-            logger.warn("Nothing to do")
+            logger.info("Nothing to do")
             output
           case _ =>
             ImportTypingsGenSources(

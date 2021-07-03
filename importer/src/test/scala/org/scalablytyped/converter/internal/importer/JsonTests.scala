@@ -1,8 +1,6 @@
 package org.scalablytyped.converter.internal.importer
 
-import io.circe.parser._
-import org.scalablytyped.converter.internal.IArray
-import org.scalablytyped.converter.internal.importer.jsonCodecs._
+import org.scalablytyped.converter.internal.{IArray, Json}
 import org.scalablytyped.converter.internal.ts._
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -56,7 +54,7 @@ class JsonTests extends AnyFunSuite {
         ),
       ),
     )
-    assert(decode[TsConfig](content) === Right(expected))
+    assert(Json[TsConfig](content) === Right(expected))
   }
 
   test("notNeededPackages.json") {
@@ -83,7 +81,7 @@ class JsonTests extends AnyFunSuite {
         ),
       )
 
-    assert(decode[NotNeededPackages](content) === Right(expected))
+    assert(Json[NotNeededPackages](content) === Right(expected))
   }
 
   test("typings.json") {
@@ -102,7 +100,7 @@ class JsonTests extends AnyFunSuite {
         true,
       )
 
-    assert(decode[TypingsJson](content) === Right(expected))
+    assert(Json[TypingsJson](content) === Right(expected))
   }
 
   test("summary.json") {
@@ -129,6 +127,6 @@ class JsonTests extends AnyFunSuite {
         Set(),
       )
 
-    assert(decode[Summary](content) === Right(expected))
+    assert(Json[Summary](content) === Right(expected))
   }
 }

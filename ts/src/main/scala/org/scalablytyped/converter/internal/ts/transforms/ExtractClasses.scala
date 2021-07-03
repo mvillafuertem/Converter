@@ -100,7 +100,7 @@ object ExtractClasses extends TransformLeaveMembers {
       case (base, false) =>
         s"/* $base. In rare cases (like HTMLElement in the DOM) it might not work as you expect. */\n"
     }
-    Comments(List(CommentData(Markers.ExpandedClass), Comment(msg)))
+    Comments(List(Marker.ExpandedClass, Comment(msg)))
   }
 
   def extractClassFromMember(
@@ -188,8 +188,8 @@ object ExtractClasses extends TransformLeaveMembers {
         }
 
       FollowAliases(scope)(tpe) match {
-        case TsTypeIntersect(types)                 => types.flatMap(findCtors(scope, loopDetector))
-        case TsTypeConstructor(TsTypeFunction(sig)) => IArray(sig)
+        case TsTypeIntersect(types)                    => types.flatMap(findCtors(scope, loopDetector))
+        case TsTypeConstructor(_, TsTypeFunction(sig)) => IArray(sig)
         case tr: TsTypeRef =>
           loopDetector.including(tr, scope) match {
             case Left(()) => Empty

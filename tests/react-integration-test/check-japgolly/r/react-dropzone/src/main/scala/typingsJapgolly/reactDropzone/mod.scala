@@ -330,9 +330,8 @@ object mod {
     }
   }
   
-  /* Inlined react-dropzone.react-dropzone.DropzoneRef & {  isFocused :boolean,   isDragActive :boolean,   isDragAccept :boolean,   isDragReject :boolean,   isFileDialogActive :boolean,   draggedFiles :std.Array</ * import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File * / any>,   acceptedFiles :std.Array</ * import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File * / any>,   rejectedFiles :std.Array</ * import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File * / any>,   rootRef :react.react.RefObject<std.HTMLElement>,   inputRef :react.react.RefObject<std.HTMLInputElement>, getRootProps (props : react-dropzone.react-dropzone.DropzoneRootProps | undefined): react-dropzone.react-dropzone.DropzoneRootProps, getInputProps (props : react-dropzone.react-dropzone.DropzoneInputProps | undefined): react-dropzone.react-dropzone.DropzoneInputProps} */
   @js.native
-  trait DropzoneState extends StObject {
+  trait DropzoneState extends DropzoneRef {
     
     var acceptedFiles: js.Array[
         /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _
@@ -359,8 +358,6 @@ object mod {
     var isFileDialogActive: Boolean = js.native
     
     var isFocused: Boolean = js.native
-    
-    def open(): Unit = js.native
     
     var rejectedFiles: js.Array[
         /* import warning: transforms.QualifyReferences#resolveTypeRef many Couldn't qualify File */ _

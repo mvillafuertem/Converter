@@ -6,7 +6,7 @@ import java.nio.file.Path
 
 import com.olvind.logging
 import com.olvind.logging.{LogLevel, Logger}
-import io.circe.{Decoder, Encoder}
+import io.circe013.{Decoder, Encoder}
 import org.scalablytyped.converter.internal.importer.Source.TsLibSource
 import org.scalablytyped.converter.internal.importer._
 import org.scalablytyped.converter.internal.maps._
@@ -30,11 +30,9 @@ object ImportTypingsGenSources {
   )
 
   object Input {
-    import io.circe.generic.auto._
-    import jsonCodecs._
-
-    implicit val ConfigEncoder: Encoder[Input] = exportEncoder[Input].instance
-    implicit val ConfigDecoder: Decoder[Input] = exportDecoder[Input].instance
+    import orphanCodecs._
+    implicit val encodes: Encoder[Input] = io.circe013.generic.semiauto.deriveEncoder
+    implicit val decodes: Decoder[Input] = io.circe013.generic.semiauto.deriveDecoder
   }
 
   def apply(
@@ -60,7 +58,7 @@ object ImportTypingsGenSources {
       case Right(initial)   => initial
     }
 
-    logger.warn(s"Importing ${initial.map(_.libName.value).mkString(", ")}")
+    logger.info(s"Importing ${initial.map(_.libName.value).mkString(", ")}")
 
     val cachedParser = PersistingParser(parseCacheDirOpt, bootstrapped.inputFolders, logger)
 
@@ -125,7 +123,7 @@ object ImportTypingsGenSources {
                 case (relPath, content) => targetFolder / relPath -> content
               }
               val minimizedMessage = if (willMinimize) "minimized " else ""
-              logger.warn(
+              logger.info(
                 s"Wrote $minimizedMessage${source.libName.value} (${outFiles.size} files) to $targetFolder...",
               )
               outFiles
